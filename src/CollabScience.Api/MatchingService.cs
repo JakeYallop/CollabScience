@@ -1,30 +1,16 @@
-﻿using CollabScience.Api.Repositories;
+﻿using CollabScience.Api.Models;
+using CollabScience.Api.Repositories;
 
 namespace CollabScience.Api;
 
 public abstract class MatchingService
 {
-    public abstract Task<Project> ComputeMatchAsync();
+    public abstract Task<Project> ComputeMatchAsync(MatchParameters? parameters);
 }
 
-
-public class Project
+public class MatchParameters
 {
-    public Project(string projectName, string description, Uri link)
-    {
-        ProjectName = projectName;
-        Description = description;
-        Link = link;
-    }
 
-    public string ProjectName { get; }
-    public string Description { get; }
-    public Uri Link { get; }
-    public Uri? ImageUrl { get; }
-    public string[]? TimeToHelp { get; }
-    public string? Commitment { get; }
-    public string[]? Expertise { get; }
-    public string[]? AreasOfResearch { get; }
 }
 
 public sealed class RandomSampleMatchingService : MatchingService
@@ -36,7 +22,7 @@ public sealed class RandomSampleMatchingService : MatchingService
         _projectsRepository = projectsRepository;
     }
 
-    public override async Task<Project> ComputeMatchAsync()
+    public override async Task<Project> ComputeMatchAsync(MatchParameters? parameters)
     {
         var projects = await _projectsRepository.GetProjectsAsync().ConfigureAwait(false);
 

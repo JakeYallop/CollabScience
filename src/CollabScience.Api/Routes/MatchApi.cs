@@ -6,9 +6,9 @@ public static class MatchApi
 {
     public static RouteGroupBuilder MapMatchApiEndpoints(this RouteGroupBuilder group)
     {
-        group.MapPost("", ([FromServices] MatchingService matchingService) =>
+        group.MapPost("", (MatchParameters? parameters, MatchingService matchingService) =>
         {
-            return matchingService.ComputeMatchAsync();
+            return matchingService.ComputeMatchAsync(parameters);
         });
 
         return group;

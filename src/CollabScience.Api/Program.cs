@@ -45,7 +45,4 @@ app.MapGroup("/api/match")
 
 app.MapGet("/api", () => "Hello World!");
 
-//app.MapFallbackToFile("presentation/index.html");
-//app.MapFallbackToFile("index.html");
-
 app.Run();

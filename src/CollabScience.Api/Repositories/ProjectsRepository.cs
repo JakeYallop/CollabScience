@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using CollabScience.Api.Models;
 
 namespace CollabScience.Api.Repositories;
 
