@@ -13,7 +13,8 @@ CollabScience was developed for the [2023 NASA International Space Apps Challeng
 * C# .NET 7 (ASP.NET Core)
 * TypeScript
 * Azure with GitHub Actions CI
-
+### Deployment 
+Code can be accessed by our platform directly via : [CollabScience.Earth.](https://collabscience.earth/)
 
 ### Potential extentions to the current code
 * Submission page & process for science projects
