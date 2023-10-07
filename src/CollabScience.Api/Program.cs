@@ -38,7 +38,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
-app.UseStaticFiles("/presentation");
 
 app.MapGroup("/api/match")
     .MapMatchApiEndpoints()
