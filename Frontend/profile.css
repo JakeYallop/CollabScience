@@ -17,10 +17,9 @@ body {
 }
 
 .scrollable-container {
-    max-height: 500px;  /* Adjust the max-height as per your requirement */
+    max-height: 500px;  
     overflow-y: auto;
-    padding-right: 20px; /* To avoid content shrinking when scrollbar appears */
-}
+    padding-right: 20px; 
 
 h2 {
     color: #333;
