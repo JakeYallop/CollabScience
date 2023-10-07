@@ -4,16 +4,11 @@ CollabScience helps you find the science projects that matter to you, rather tha
 
 CollabScience was developed for the [2023 NASA International Space Apps Challenge](https://www.spaceappschallenge.org/2023/challenges/a-marketplace-for-open-science-projects/) a two day hackathon to come up with innovate ideas inspired by and using NASA data.
 
-### Getting the project running:
+### GQuick Start Guide:
 1. Clone the code
 2. Launch the project in Visual Studio by double clicking CollabScience.sln
 3. Click the run button in Visual Studio and confirm any dialogs about https
 
-###Quick Start Guide
-
-    Clone: Begin by cloning the repository to explore the innovative codebase.
-    Launch: Effortlessly open the project in Visual Studio with a simple double-click on 'CollabScience.sln'.
-    Run: Propel your exploration by clicking the run button in Visual Studio, confirming any HTTPS dialogs that appear.
 
 ### Technologies:
 * C# .NET 7 (ASP.NET Core)
@@ -22,7 +17,10 @@ CollabScience was developed for the [2023 NASA International Space Apps Challeng
 ### Deployment 
 Code can be accessed by our platform directly via : [CollabScience.Earth.](https://collabscience.earth/)
 
-### Potential extentions to the current code
-* Submission page & process for science projects
-* Sign up, Log in & User profile storage
-* Communication between project maintainers and potential contributors
+Potential Extensions
+
+1.Submission Dynamics: Incorporate a comprehensive submission page and procedure, streamlining the introduction of new science projects to the platform.
+
+2.User Ecosystem: Enhance user engagement and personalization through a robust system for sign-up, login, and user profile management.
+
+3.Interactive Communications: Forge a communication bridge between project maintainers and potential contributors, ensuring a seamless exchange of ideas and feedback.
