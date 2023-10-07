@@ -399,3 +399,6 @@ yarn-error.log*
 # Ignore Identity Server files
 **/keys/is-*.json
 **/tempkey.jwk
+
+**/js/*.js
+**/js/*.js.map

@@ -1,4 +1,4 @@
-import { makeRequest } from "./http/http.ts";
+import { makeRequest } from "http";
 
 export interface MatchParameters {
     areasOfInterest?: string[];
