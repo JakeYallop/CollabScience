@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using NovaScience.Api.Routes;
+
+var builder = WebApplication.CreateBuilder(args);
 
 
 if (builder.Environment.IsDevelopment())
@@ -32,7 +34,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 
-app.MapGet("api/", () => "Hello World!");
+app.MapGroup("/api")
+    .MapMatchApiEndpoints()
+    .MapGet("", () => "Hello World!");
 
 app.MapFallbackToFile("index.html");
 
