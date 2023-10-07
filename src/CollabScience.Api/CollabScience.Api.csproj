@@ -4,7 +4,6 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ClientRoot>../CollabScience.Client/</ClientRoot>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,19 +22,7 @@
   </ItemGroup>
   
   <Target Name="PublishBuildClient" AfterTargets="ComputeFilesToPublish">
-    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec WorkingDirectory="$(ClientRoot)" Command="pnpm install" />
-    <Exec WorkingDirectory="$(ClientRoot)" Command="pnpm run build" />
-
-    <!-- Include the newly-built files in the publish output -->
-    <ItemGroup>
-      <DistFiles Include="$(ClientRoot)dist\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>wwwroot\%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      </ResolvedFileToPublish>
-    </ItemGroup>
+    <Exec WorkingDirectory="./" Command="tsc --build ./tsconfig.json" />
   </Target>
 
 </Project>
