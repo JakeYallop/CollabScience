@@ -29,12 +29,7 @@ if (app.Environment.IsDevelopment())
     });
 
 }
-else
-{
-    app.UseStaticFiles();
-}
 
-
-app.UseRouting();
+app.UseStaticFiles();
 
 app.Run();
