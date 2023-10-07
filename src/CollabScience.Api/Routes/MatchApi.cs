@@ -3,14 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CollabScience.Api.Routes;
 
-public class MatchParametersData
-{
-    public string[]? AreasOfInterest { get; init; }
-    public string[]? Equipment { get; init; }
-    public string[]? Expertise { get; init; }
-    public int[]? AlreadyMatched { get; init; }
-}
-
 public static class MatchApi
 {
     public static RouteGroupBuilder MapMatchApiEndpoints(this RouteGroupBuilder group)
@@ -38,3 +30,12 @@ public static class MatchApi
         return group;
     }
 }
+
+public class MatchParametersData
+{
+    public string[]? AreasOfInterest { get; init; }
+    public string[]? Equipment { get; init; }
+    public string[]? Expertise { get; init; }
+    public int[]? AlreadyMatched { get; init; }
+}
+

@@ -18,6 +18,10 @@ app.MapGroup("/api/match")
     .MapMatchApiEndpoints()
     .WithTags("Match");
 
+app.MapGroup("/api/projects")
+    .MapProjectsApiEndpoints()
+    .WithTags("Projects");
+
 app.MapGet("/api", () => "Hello World!");
 
 app.Run();
