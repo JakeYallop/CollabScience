@@ -26,6 +26,8 @@ jobs:
         
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.4.0
+        with:
+          version: latest
         
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
