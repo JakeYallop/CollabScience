@@ -4,7 +4,7 @@ CollabScience helps you find the science projects that matter to you, rather tha
 
 CollabScience was developed for the [2023 NASA International Space Apps Challenge](https://www.spaceappschallenge.org/2023/challenges/a-marketplace-for-open-science-projects/) a two day hackathon to come up with innovate ideas inspired by and using NASA data.
 
-### GQuick Start Guide:
+### Quick Start Guide:
 1. Clone the code
 2. Launch the project in Visual Studio by double clicking CollabScience.sln
 3. Click the run button in Visual Studio and confirm any dialogs about https
