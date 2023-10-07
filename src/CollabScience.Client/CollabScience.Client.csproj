@@ -3,6 +3,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <EnableNETAnalyzers>false</EnableNETAnalyzers>
   </PropertyGroup>
+  
   <ItemGroup>
     <None Include="*" />
     <None Include="*.csproj" Visible="false" />

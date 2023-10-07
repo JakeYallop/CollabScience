@@ -1,4 +1,4 @@
-﻿using NovaScience.Api.Routes;
+﻿using CollabScience.Api.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 

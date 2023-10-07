@@ -1,4 +1,4 @@
-﻿namespace NovaScience.Api.Routes;
+﻿namespace CollabScience.Api.Routes;
 
 public static class MatchApi
 {
