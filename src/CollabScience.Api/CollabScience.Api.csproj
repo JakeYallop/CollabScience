@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\http\**" />
+    <Content Remove="wwwroot\http\**" />
+    <EmbeddedResource Remove="wwwroot\http\**" />
+    <None Remove="wwwroot\http\**" />
+    <TypeScriptCompile Remove="wwwroot\http\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="7.0.11" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.2.2">
@@ -15,11 +23,6 @@
     </PackageReference>
     
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\http\" />
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   
   <Target Name="PublishBuildClient" AfterTargets="ComputeFilesToPublish">
