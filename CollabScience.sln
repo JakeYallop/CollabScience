@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ConvertingTheDataToJson.md = ConvertingTheDataToJson.md
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollabScience.Client", "src\CollabScience.Client\CollabScience.Client.csproj", "{DDDB5A3F-4E9E-49EC-A008-53D73DAD32E9}"
