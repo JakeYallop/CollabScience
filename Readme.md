@@ -1,8 +1,8 @@
 # CollabScience
 
-CollabScience helps you find the science projects that matter to you, rather than spending all your time reviewing lists of open science projects you can now find a project to contribute to in minutes!
+CollabScience helps you find the science projects that matter to you, rather than spending all your time reviewing lists of open science projects you can now find a project to contribute to in minutes! What we innovated is  a 'Swipe & Match' feature, where users can swipe through projects and, upon a match, connect with those that align with their expertise and interests. 
 
-CollabScience was developed for the [2023 NASA International Space Apps Challenge](https://www.spaceappschallenge.org/2023/challenges/a-marketplace-for-open-science-projects/) a two day hackathon to come up with innovate ideas inspired by and using NASA data
+CollabScience was developed for the [2023 NASA International Space Apps Challenge](https://www.spaceappschallenge.org/2023/challenges/a-marketplace-for-open-science-projects/) a two day hackathon to come up with innovate ideas inspired by and using NASA data.
 
 ### Getting the project running:
 1. Clone the code
