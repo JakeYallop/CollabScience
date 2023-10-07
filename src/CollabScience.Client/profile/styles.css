@@ -33,16 +33,20 @@ label {
     color: #555;
 }
 
+
 input[type="text"],
 input[type="email"],
-select {
-    width: calc(100% - 20px);
+select,
+.chosen-select {
+    width: 100%; /* Make all fields take up 100% of the container width */
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 4px;
     border: 1px solid #ddd;
     box-sizing: border-box;
+    max-width: none; /* Ensure max-width does not limit their width */
 }
+
 
 .button-container {
     text-align: center;
@@ -75,7 +79,18 @@ label {
     font-size: 16px;
 }
 
-.chosen-container-multi .chosen-choices {
-    width: calc(100% - 20px);
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.chosen-select {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
 }
