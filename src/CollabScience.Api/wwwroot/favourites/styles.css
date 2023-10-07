@@ -1,0 +1,89 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #084C61;
+    font-family: 'Arial', sans-serif;
+}
+
+.profile {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #AFD7E3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.personal-info,
+.preferences {
+    margin-bottom: 30px;
+}
+
+.profile-picture {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#image-upload {
+    display: none;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #4CAF50;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+strong {
+    color: #333;
+}
+
+span {
+    font-weight: bold;
+    color: #555;
+}
+
+.edit-btn {
+    background-color: #ddd;
+    color: #333;
+    margin-left: 10px;
+}
+
