@@ -12,8 +12,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "exclude": [
-    "node_modules",
-    "wwwroot"
-  ]
+  "exclude": ["node_modules", "wwwroot"]
 }
