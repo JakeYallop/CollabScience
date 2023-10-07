@@ -4,40 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
     <title>Preferences Form</title>
 </head>
 
 <body>
-    <section id="contact-details">
-        <h2>Contact Details</h2>
+    <div class="container">
+    <section id="personalInfo">
+        <h2>Personal Information</h2>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="name" placeholder="Euan Murphy"><br><br>
         <label for="email">Email:</label>
-        <input type="text" id="email" name="email"><br><br>
+        <input type="email" id="email" name="email" placeholder="euan_smurph@gmail.com"><br><br>
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location"><br><br>
-        <label for="TimeZone">Time:</label>
-        <input type="text" id="time" name="time"><br><br>
+        <input type="text" id="location" name="location" placeholder="Aberdeen"><br><br>
+        <label for="timeZone">Time Zone:</label>
+        <input type="text" id="timeZone" name="timeZone" placeholder="BST"><br><br>
     </section>
 
     <section id="preferences">
         <h2>Preferences</h2>
         <label for="time">How much time do you have to contribute?</label>
-        <input type="text" id="time" name="time"><br><br>
+        <input type="text" id="time" name="time" placeholder="15h"><br><br>
 
         <label for="expertise">Expertise/s:</label>
-        <input type="text" id="expertise" name="expertise" value="Software developer"><br><br>
+        <input type="text" id="expertise" name="expertise" placeholder="Software developer"><br><br>
 
         <label for="interest">Area of Interest:</label>
-        <input type="text" id="interest" name="interest"><br><br>
+        <input type="text" id="interest" name="interest" placeholder="Machine Learning"><br><br>
 
         <label for="equipment">Equipment:</label>
-        <input type="text" id="equipment" name="equipment"><br><br>
+        <input type="text" id="equipment" name="equipment"placeholder="telescope"><br><br>
     </section>
-    <button id="submit">Submit</button>
+    <div class="button-container">
+        <button id="submit">Submit</button>
+    </div>
+    </div>
 
-    <script src="script.ts"></script>
+    <script src="main.ts"></script>
 </body>
 
 </html>
