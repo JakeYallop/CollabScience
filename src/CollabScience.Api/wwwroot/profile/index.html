@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/images/Logo.svg" />
     <link rel="stylesheet" type="text/css" href="/colors.css" />
     <link rel="stylesheet" type="text/css" href="/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
-    <link rel="stylesheet" href="profile.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"
+    />
+    <link rel="stylesheet" href="profile.css" />
     <title>CollabScience - Preferences</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-    <section id="personalInfo">
+      <section id="personalInfo">
         <h2>Personal Information</h2>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Euan Murphy"><br><br>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Euan Murphy"
+        /><br /><br />
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="euan_smurph@gmail.com"><br><br>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="euan_smurph@gmail.com"
+        /><br /><br />
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location" placeholder="Aberdeen"><br><br>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="Aberdeen"
+        /><br /><br />
         <label for="timeZone">Time Zone:</label>
-        <input type="text" id="timeZone" name="timeZone" placeholder="BST"><br><br>
-    </section>
+        <input
+          type="text"
+          id="timeZone"
+          name="timeZone"
+          placeholder="BST"
+        /><br /><br />
+      </section>
 
-    <section id="preferences">
+      <section id="preferences">
         <h2>Preferences</h2>
         <label for="time">How much time do you have to contribute?</label>
-        <input type="text" id="time" name="time" placeholder="15h"><br><br>
+        <input
+          type="text"
+          id="time"
+          name="time"
+          placeholder="15h"
+        /><br /><br />
 
-      
-        
         <label for="expertise">Expertise:</label>
         <form method="get">
-        <select id="expertise" name="expertise[]"  multiple class="chosen-select">
+          <select
+            id="expertise"
+            name="expertise[]"
+            multiple
+            class="chosen-select"
+          >
             <option value="machine_learning">Machine Learning</option>
             <option value="software_development">Software Development</option>
             <option value="physics">Physics</option>
@@ -57,60 +87,61 @@
             <option value="zoology">Zoology</option>
             <option value="marine_biology">Marine Biology</option>
             <option value="geophysics">Geophysics</option>
-        </select>
+          </select>
         </form>
-    
 
         <label for="interest">Area of Interest:</label>
-        <select id="interest" name="interest" placeholder="Dark Matter" multiple class="chosen-select">
-            <option value="earth_science">Earth Science</option>
-            <option value="geology">Geology</option>
-            <option value="space_science">Space Science</option>
-            <option value="psychology">Psychology</option>
-            <option value="magnetic_spectrum">Magnetic Spectrum</option>
-            <option value="spectrometry">Spectrometry</option>
-            <option value="meteorology">Meteorology</option>
-            <option value="gravitational_waves">Gravitational Waves</option>
-            <option value="planet_formation">Planet Formation</option>
-            <option value="solar_sciences">Solar Sciences</option>
-            <option value="star_formation">Star Formation</option>
-            <option value="dark_matter">Dark Matter</option>
-            <option value="medical">Medical</option>
-            <option value="oceanographic">Oceanographic</option>
-            <option value="data">Data</option>
-            <option value="atmospheric">Atmospheric</option>
-            <option value="biology">Biology</option>
+        <select
+          id="interest"
+          name="interest"
+          placeholder="Dark Matter"
+          multiple
+          class="chosen-select"
+        >
+          <option value="earth_science">Earth Science</option>
+          <option value="geology">Geology</option>
+          <option value="space_science">Space Science</option>
+          <option value="psychology">Psychology</option>
+          <option value="magnetic_spectrum">Magnetic Spectrum</option>
+          <option value="spectrometry">Spectrometry</option>
+          <option value="meteorology">Meteorology</option>
+          <option value="gravitational_waves">Gravitational Waves</option>
+          <option value="planet_formation">Planet Formation</option>
+          <option value="solar_sciences">Solar Sciences</option>
+          <option value="star_formation">Star Formation</option>
+          <option value="dark_matter">Dark Matter</option>
+          <option value="medical">Medical</option>
+          <option value="oceanographic">Oceanographic</option>
+          <option value="data">Data</option>
+          <option value="atmospheric">Atmospheric</option>
+          <option value="biology">Biology</option>
         </select>
         <label for="equipment">Equipment:</label>
-        <select id="equipment" name="equipment[]" multiple class="chosen-select">
-        <option value="telescope">Telescope</option>
-        <option value="microscope">Microscope</option>
-        <option value="spectrometer">Spectrometer</option>
-        <option value="seismometer">Seismometer</option>
-        <option value="barometer">Barometer</option>
-        <option value="centrifuge">Centrifuge</option>
-        <option value="chromatograph">Chromatograph</option>
-        <option value="electron_microscope">Electron Microscope</option>
-    </select>
-
-
-   
-    </section>
-    <div class="button-container">
+        <select
+          id="equipment"
+          name="equipment[]"
+          multiple
+          class="chosen-select"
+        >
+          <option value="telescope">Telescope</option>
+          <option value="microscope">Microscope</option>
+          <option value="spectrometer">Spectrometer</option>
+          <option value="seismometer">Seismometer</option>
+          <option value="barometer">Barometer</option>
+          <option value="centrifuge">Centrifuge</option>
+          <option value="chromatograph">Chromatograph</option>
+          <option value="electron_microscope">Electron Microscope</option>
+        </select>
+      </section>
+      <div class="button-container">
         <button id="submit">Submit</button>
-    </div>
+      </div>
     </div>
 
-    <script src="main.ts"></script>
+    <script src="js/profile.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.chosen-select').chosen();
-    });
-</script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+  </body>
 </html>
