@@ -37,6 +37,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.MapGroup("/api/match")
