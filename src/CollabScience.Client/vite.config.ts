@@ -1,9 +1,18 @@
 import { loadEnv } from "vite";
 import { defineConfig } from "vite";
+import { resolve } from "path";
 
 export default defineConfig(({ mode }) => {
     const vars = loadEnv(mode, process.cwd(), "SSL");
     return {
+        build: {
+            rollupOptions: {
+                input: {
+                    main: resolve(__dirname, 'index.html'),
+                    presentation: resolve(__dirname, 'presentation/index.html'),
+                },
+            },
+        },
         server: {
             open: true,
             https: {
