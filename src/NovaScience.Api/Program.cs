@@ -3,6 +3,7 @@
 
 if (builder.Environment.IsDevelopment())
 {
+builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(options =>
     {
@@ -27,9 +28,12 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = "";
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "API");
     });
-
 }
 
 app.UseStaticFiles();
+
+app.MapGet("/", () => "Hello World!");
+
+app.MapFallbackToFile("index.html");
 
 app.Run();
