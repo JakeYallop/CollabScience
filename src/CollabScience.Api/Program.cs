@@ -19,7 +19,7 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddSingleton(c => new Db("data.json"));
 builder.Services.AddScoped<ProjectsRepository>();
-builder.Services.AddScoped<MatchingService, RandomSampleMatchingService>();
+builder.Services.AddScoped<MatchingService, ParametersMatchingService>();
 
 var app = builder.Build();
 
