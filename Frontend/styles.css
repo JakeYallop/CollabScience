@@ -5,7 +5,7 @@
   }
   
   body {
-    background: #CCFBFE;
+    background: #084C61;
     overflow: hidden;
     font-family: sans-serif;
   }
@@ -19,6 +19,7 @@
     position: relative;
     opacity: 0;
     transition: opacity 0.1s ease-in-out;
+    justify-content: flex-end; 
   }
   
   .loaded.tinder {
@@ -69,7 +70,6 @@
     display: inline-block;
     width: 90vw;
     max-width: 400px;
-    height: 70vh;
     background: #FFFFFF;
     padding-bottom: 40px;
     border-radius: 8px;
@@ -80,6 +80,8 @@
     cursor: -webkit-grab;
     cursor: -moz-grab;
     cursor: grab;
+    height: 60vh;
+    bottom: 0; 
   }
   
   .moving.tinder--card {
@@ -112,7 +114,11 @@
     flex: 0 0 100px;
     text-align: center;
     padding-top: 20px;
+     position: relative;  
+     z-index: 3; 
   }
+  
+  
   
   .tinder--buttons button {
     border-radius: 50%;
@@ -142,4 +148,16 @@
   }
 
   
-  
+  .project-image {
+    width: 150px;  
+    height:auto;
+  }
+
+  .scrollable-content {
+    max-height: 150px;  
+    overflow-y: auto; 
+    padding-right: 5px; 
+    background-color: aliceblue;
+}
+
+
