@@ -1,9 +1,11 @@
 import './style.css'
+import './colors.css'
+
 import { setupCounter } from './counter.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-    <h1>NovaScience - Find your perfect science project</h1>
+    <h1>CollabScience - Find your perfect science project</h1>
     <button>Get Started</button>
   </div>
 `

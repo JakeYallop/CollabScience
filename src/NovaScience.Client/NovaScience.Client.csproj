@@ -7,7 +7,4 @@
     <None Include="*" />
     <None Include="*.csproj" Visible="false" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="profile\" />
-  </ItemGroup>
 </Project>
