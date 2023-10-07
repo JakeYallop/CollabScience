@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("api/", () => "Hello World!");
 
 app.MapFallbackToFile("index.html");
 
