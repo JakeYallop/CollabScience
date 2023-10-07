@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34112.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NovaScience.Api", "src\NovaScience.Api\NovaScience.Api.csproj", "{5846576C-D1A1-4034-9940-B237FEC51DC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollabScience.Api", "src\CollabScience.Api\CollabScience.Api.csproj", "{5846576C-D1A1-4034-9940-B237FEC51DC4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7108D1B0-565C-4BA9-B223-41205FB462A2}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.targets = Directory.Build.targets
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NovaScience.Client", "src\NovaScience.Client\NovaScience.Client.csproj", "{DDDB5A3F-4E9E-49EC-A008-53D73DAD32E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollabScience.Client", "src\CollabScience.Client\CollabScience.Client.csproj", "{DDDB5A3F-4E9E-49EC-A008-53D73DAD32E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
