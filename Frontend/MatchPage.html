@@ -3,62 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Match Projects</title>
 </head>
 <body>
-    <div class="card-container">
-        <!-- Card 1 -->
-        <div class="card" id="card1">
-            <img src="card1.jpg" alt="Card 1">
-            <h2>Card 1</h2>
-            <div class="buttons">
-                <button class="dislike-button" onclick="dislikeCard('card1')">Dislike</button>
-                <button class="like-button" onclick="likeCard('card1')">Like</button>
-            </div>
-        </div>
+    <div class="tinder">
+        <div class="tinder--status">
+          <i class="fa fa-remove"></i>
+          <i class="fa fa-star"></i>
 
-        <!-- Card 2 -->
-        <div class="card" id="card2">
-            <img src="card2.jpg" alt="Card 2">
-            <h2>Card 2</h2>
-            <div class="buttons">
-                <button class="dislike-button" onclick="dislikeCard('card2')">Dislike</button>
-                <button class="like-button" onclick="likeCard('card2')">Like</button>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card" id="card3">
-            <img src="card3.jpg" alt="Card 3">
-            <h2>Card 3</h2>
-            <div class="buttons">
-                <button class="dislike-button" onclick="dislikeCard('card3')">Dislike</button>
-                <button class="like-button" onclick="likeCard('card3')">Like</button>
-            </div>
+          <i class="fa fa-heart"></i>
         </div>
       
-        <div class="card-container">
-            <!-- Card 4 -->
-            <div class="card" id="card4">
-                <img src="card4.jpg" alt="Card 4">
-                <h2>Card 1</h2>
-                <div class="buttons">
-                    <button class="dislike-button" onclick="dislikeCard('card4')">Dislike</button>
-                    <button class="like-button" onclick="likeCard('card4')">Like</button>
-                </div>
-            </div>
+        <div class="tinder--cards">
+          <div class="tinder--card">
+            <img src="https://placekitten.com/600/300">
+            <h3>Project 1</h3>
+            <p>This is a demo </p>
+          </div>
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/animals">
+            <h3>Project 2</h3>
+            <p>This is a demo </p>
+          </div>
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/nature">
+            <h3>Project 3</h3>
+            <p>This is a demo </p>
+          </div>
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/tech">
+            <h3>Project 4</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/arch">
+            <h3>Project 5</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+        </div>
+      
+        <div class="tinder--buttons">
+          <button id="nope"><i class="fa fa-remove"></i></button>
+          <button id="love"><i class="fa fa-heart"></i></button>
+          <button id="favorite"><i class="fa fa-star"></i></button> 
+        </div>
+      </div>
+        
 
-            <div class="card" id="card5">
-                <img src="card4.jpg" alt="Card 5">
-                <h2>Card 4</h2>
-                <div class="buttons">
-                    <button class="dislike-button" onclick="dislikeCard('card5')">Dislike</button>
-                    <button class="like-button" onclick="likeCard('card5')">Like</button>
-                </div>
-            </div>
-    </div>
-
-    <script src="main.ts"></script>
+    <script src="main.js"></script>
 </body>
 </html>
