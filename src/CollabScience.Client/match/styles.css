@@ -81,7 +81,6 @@
     cursor: -moz-grab;
     cursor: grab;
     height: 60vh;
-    bottom: 0; 
   }
   
   .moving.tinder--card {
