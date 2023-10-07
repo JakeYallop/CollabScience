@@ -4,9 +4,9 @@ public class MatchParameters
 {
     public MatchParameters(IEnumerable<string> areasOfInterest, IEnumerable<string> equipment, IEnumerable<string> expertise, IEnumerable<int> alreadyMatched)
     {
-        AreasOfInterest = areasOfInterest.ToHashSet();
-        Equipment = equipment.ToHashSet();
-        Expertise = expertise.ToHashSet();
+        AreasOfInterest = areasOfInterest.ToHashSet(StringComparer.OrdinalIgnoreCase);
+        Equipment = equipment.ToHashSet(StringComparer.OrdinalIgnoreCase);
+        Expertise = expertise.ToHashSet(StringComparer.OrdinalIgnoreCase);
         AlreadyMatched = alreadyMatched.ToHashSet();
     }
 

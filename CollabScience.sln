@@ -17,6 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollabScience.Client", "src\CollabScience.Client\CollabScience.Client.csproj", "{DDDB5A3F-4E9E-49EC-A008-53D73DAD32E9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{9DB81FEC-A9B0-4E51-AC3B-7E3D97F2FE53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{3EAE5B50-DE43-4060-9E04-CBBDC242B853}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main_novascience.yml = .github\workflows\main_novascience.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +49,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3EAE5B50-DE43-4060-9E04-CBBDC242B853} = {9DB81FEC-A9B0-4E51-AC3B-7E3D97F2FE53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D60CBA3E-8B0E-4199-AD0F-1088288C4C77}
