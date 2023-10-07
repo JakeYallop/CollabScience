@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
     <link rel="stylesheet" href="profile.css">
     <title>Preferences Form</title>
 </head>
@@ -30,7 +33,8 @@
       
         
         <label for="expertise">Expertise:</label>
-        <select id="expertise" name="expertise">
+        <form method="get">
+        <select id="expertise" name="expertise[]"  multiple class="chosen-select">
             <option value="machine_learning">Machine Learning</option>
             <option value="software_development">Software Development</option>
             <option value="physics">Physics</option>
@@ -53,10 +57,11 @@
             <option value="marine_biology">Marine Biology</option>
             <option value="geophysics">Geophysics</option>
         </select>
+        </form>
     
 
         <label for="interest">Area of Interest:</label>
-        <select id="interest" name="interest" placeholder="Dark Matter">
+        <select id="interest" name="interest" placeholder="Dark Matter" multiple class="chosen-select">
             <option value="earth_science">Earth Science</option>
             <option value="geology">Geology</option>
             <option value="space_science">Space Science</option>
@@ -76,7 +81,7 @@
             <option value="biology">Biology</option>
         </select>
         <label for="equipment">Equipment:</label>
-    <select id="equipment" name="equipment">
+        <select id="equipment" name="equipment[]" multiple class="chosen-select">
         <option value="telescope">Telescope</option>
         <option value="microscope">Microscope</option>
         <option value="spectrometer">Spectrometer</option>
@@ -86,6 +91,9 @@
         <option value="chromatograph">Chromatograph</option>
         <option value="electron_microscope">Electron Microscope</option>
     </select>
+
+
+   
     </section>
     <div class="button-container">
         <button id="submit">Submit</button>
@@ -93,6 +101,15 @@
     </div>
 
     <script src="main.ts"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.chosen-select').chosen();
+    });
+</script>
 </body>
 
 </html>
