@@ -1,23 +1,39 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 
 
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+builder.Services.AddControllers();
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen(options =>
+    {
+        options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
+        {
+            Title = "API",
+        });
+    });
 }
 
+var app = builder.Build();
+
 app.UseHttpsRedirection();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.DocumentTitle = "API";
+        options.ConfigObject.DocExpansion = Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None;
+        options.RoutePrefix = "";
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "API");
+    });
+}
+
 app.UseStaticFiles();
 
-app.UseRouting();
+app.MapGet("api/", () => "Hello World!");
 
-app.UseAuthorization();
-
-app.MapRazorPages();
+app.MapFallbackToFile("index.html");
 
 app.Run();
