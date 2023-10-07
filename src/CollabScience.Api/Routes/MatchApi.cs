@@ -1,12 +1,14 @@
-﻿namespace CollabScience.Api.Routes;
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace CollabScience.Api.Routes;
 
 public static class MatchApi
 {
     public static RouteGroupBuilder MapMatchApiEndpoints(this RouteGroupBuilder group)
     {
-        group.MapPost("", () =>
+        group.MapPost("", ([FromServices] MatchingService matchingService) =>
         {
-            return Results.Ok("Hello world!");
+            return matchingService.ComputeMatchAsync();
         });
         return group;
     }
