@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <None Include="*" />
+    <None Include="*.csproj" Visible="false" />
+  </ItemGroup>
+</Project>
