@@ -9,6 +9,12 @@ CollabScience was developed for the [2023 NASA International Space Apps Challeng
 2. Launch the project in Visual Studio by double clicking CollabScience.sln
 3. Click the run button in Visual Studio and confirm any dialogs about https
 
+###Quick Start Guide
+
+    Clone: Begin by cloning the repository to explore the innovative codebase.
+    Launch: Effortlessly open the project in Visual Studio with a simple double-click on 'CollabScience.sln'.
+    Run: Propel your exploration by clicking the run button in Visual Studio, confirming any HTTPS dialogs that appear.
+
 ### Technologies:
 * C# .NET 7 (ASP.NET Core)
 * TypeScript
