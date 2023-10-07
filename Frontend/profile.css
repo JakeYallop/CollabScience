@@ -77,4 +77,5 @@ label {
 
 .chosen-container-multi .chosen-choices {
     width: calc(100% - 20px);
+    padding: 10px;
 }
