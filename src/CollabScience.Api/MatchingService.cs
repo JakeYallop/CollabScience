@@ -41,6 +41,5 @@ public sealed class RandomSampleMatchingService : MatchingService
         var projects = await _projectsRepository.GetProjectsAsync().ConfigureAwait(false);
 
         return projects[Random.Shared.Next(0, projects.Length)];
-
     }
 }

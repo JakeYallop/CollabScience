@@ -10,6 +10,7 @@ public static class MatchApi
         {
             return matchingService.ComputeMatchAsync();
         });
+
         return group;
     }
 }

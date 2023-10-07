@@ -4,7 +4,6 @@ using CollabScience.Api.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddControllers();
@@ -20,7 +19,7 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddSingleton(c => new Db("data.json"));
 builder.Services.AddScoped<ProjectsRepository>();
-builder.Services.AddSingleton<MatchingService, RandomSampleMatchingService>();
+builder.Services.AddScoped<MatchingService, RandomSampleMatchingService>();
 
 var app = builder.Build();
 
@@ -40,9 +39,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 
-app.MapGroup("/api")
+app.MapGroup("/api/match")
     .MapMatchApiEndpoints()
-    .MapGet("", () => "Hello World!");
+    .WithTags("Match");
+
+app.MapGet("/api", () => "Hello World!");
 
 app.MapFallbackToFile("index.html");
 
