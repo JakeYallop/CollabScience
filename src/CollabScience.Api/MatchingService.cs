@@ -6,7 +6,7 @@ namespace CollabScience.Api;
 
 public abstract class MatchingService
 {
-    public abstract Task<Project> ComputeMatchAsync(MatchParameters parameters);
+    public abstract Task<IEnumerable<Project>> ComputeMatchAsync(MatchParameters parameters, int numberOfMatches = 1);
 }
 
 
@@ -21,16 +21,15 @@ public sealed class ParametersMatchingService : MatchingService
         _projectsRepository = projectsRepository;
     }
 
-    public override async Task<Project> ComputeMatchAsync(MatchParameters parameters)
+    public override async Task<IEnumerable<Project>> ComputeMatchAsync(MatchParameters parameters, int numberOfMatches = 1)
     {
         var projects = await _projectsRepository.GetProjectsAsync().ConfigureAwait(false);
-        if (parameters.AlreadyMatched.Count is 0)
+        if (parameters.AlreadyMatched.Count == projects.Length)
         {
-            return RandomSampleMatcher.Match(projects, parameters);
+            return new[] { RandomSampleMatcher.Match(projects, parameters) };
         }
 
-        var project = projects.OrderByDescending(x => ComputeWeightForProject(x, parameters)).First();
-        return project;
+        return projects.OrderByDescending(x => ComputeWeightForProject(x, parameters)).Take(numberOfMatches);
     }
 
     private static double ComputeWeightForProject(Project project, MatchParameters parameters)

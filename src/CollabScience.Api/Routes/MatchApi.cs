@@ -25,6 +25,16 @@ public static class MatchApi
             ));
         });
 
+        group.MapPost("/{count:int}", (int count, MatchParametersData parameters, MatchingService matchingService) =>
+        {
+            return matchingService.ComputeMatchAsync(new(
+                parameters.AreasOfInterest ?? Array.Empty<string>(),
+                parameters.Equipment ?? Array.Empty<string>(),
+                parameters.Expertise ?? Array.Empty<string>(),
+                parameters.AlreadyMatched ?? Array.Empty<int>()
+            ));
+        });
+
         return group;
     }
 }

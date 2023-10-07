@@ -4,19 +4,6 @@ using CollabScience.Api.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//if (builder.Environment.IsDevelopment())
-//{
-//    builder.Services.AddControllers();
-//    builder.Services.AddEndpointsApiExplorer();
-//    builder.Services.AddSwaggerGen(options =>
-//    {
-//        options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
-//        {
-//            Title = "API",
-//        });
-//    });
-//}
-
 builder.Services.AddSingleton(c => new Db("data.json"));
 builder.Services.AddScoped<ProjectsRepository>();
 builder.Services.AddScoped<MatchingService, ParametersMatchingService>();
@@ -24,19 +11,6 @@ builder.Services.AddScoped<MatchingService, ParametersMatchingService>();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
-
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI(options =>
-//    {
-//        options.DocumentTitle = "API";
-//        options.ConfigObject.DocExpansion = Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.None;
-//        options.RoutePrefix = "";
-//        options.SwaggerEndpoint("/swagger/v1/swagger.json", "API");
-//    });
-//}
-
 app.UseDefaultFiles();
 app.UseStaticFiles();
 

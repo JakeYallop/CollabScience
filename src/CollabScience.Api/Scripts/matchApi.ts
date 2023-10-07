@@ -22,14 +22,20 @@ export interface Project {
 const BASE = "/api/match";
 const urls = {
     postNextMatch: `${BASE}/match`,
+    postNextMatches: (count: number) => `${BASE}/match/${count}`,
 };
 
 const match = (parameters: MatchParameters) => {
-    return makeRequest<Project>(urls.postNextMatch, "POST", parameters);
+    return makeRequest<Project[]>(urls.postNextMatch, "POST", parameters);
+};
+
+const matches = (parameters: MatchParameters, count: number) => {
+    return makeRequest<Project[]>(urls.postNextMatches(count), "POST", parameters);
 };
 
 const matchApi = {
     match,
+    matches,
 };
 
 export default matchApi;
