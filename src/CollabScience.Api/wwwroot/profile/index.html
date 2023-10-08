@@ -15,36 +15,31 @@
   </head>
 
   <body>
-    <div style="position: absolute; right: 0.5em; top: 0px">
-      <a style="color: white" href="https://github.com/JakeYallop/CollabScience"
-        >Read the code at
-        <img
-          style="height: 2em; line-height: 1em; top: 0.5em; position: relative"
-          src="/images/GitHub_Logo_White.png"
-      /></a>
-    </div>
-    <div class="container">
-      <section id="personalInfo">
-        <h2>Personal Information</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Euan Murphy" />
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="euan_smurph@gmail.com"
-        />
-        <label for="location">Location:</label>
-        <input
-          type="text"
-          id="location"
-          name="location"
-          placeholder="Aberdeen"
-        />
-        <label for="timeZone">Time Zone:</label>
-        <input type="text" id="timeZone" name="timeZone" placeholder="BST" />
-      </section>
+      <div style="position: absolute; right: 0.5em; top: 0px">
+          <a style="color: white" href="https://github.com/JakeYallop/CollabScience">
+              Read the code at
+              <img style="height: 2em; line-height: 1em; top: 0.5em; position: relative"
+                   src="/images/GitHub_Logo_White.png" />
+          </a>
+      </div>
+      <div class="container">
+          <section id="personalInfo">
+              <h2>Personal Information</h2>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Euan Murphy" />
+              <label for="email">Email:</label>
+              <input type="email"
+                     id="email"
+                     name="email"
+                     placeholder="euan_smurph@gmail.com" />
+              <label for="location">Location:</label>
+              <input type="text"
+                     id="location"
+                     name="location"
+                     placeholder="Aberdeen" />
+              <label for="timeZone">Time Zone:</label>
+              <input type="text" id="timeZone" name="timeZone" placeholder="BST" />
+          </section>
 
           <section id="preferences">
               <h2>Preferences</h2>
@@ -53,8 +48,6 @@
                      id="contribution-time"
                      name="time"
                      placeholder="15h" />
-          placeholder="15h"
-        />
 
               <label for="expertise">Expertise:</label>
               <form method="get">
@@ -84,69 +77,62 @@
                       <option value="marine_biology">Marine Biology</option>
                       <option value="geophysics">Geophysics</option>
                   </select>
-        <label for="interest">Area of Interest:</label>
-        <select
-          id="interest"
-          name="interest"
-          placeholder="Dark Matter"
-          multiple
-          class="chosen-select"
-        >
-          <option value="earth_science">Earth Science</option>
-          <option value="geology">Geology</option>
-          <option value="space_science">Space Science</option>
-          <option value="psychology">Psychology</option>
-          <option value="magnetic_spectrum">Magnetic Spectrum</option>
-          <option value="spectrometry">Spectrometry</option>
-          <option value="meteorology">Meteorology</option>
-          <option value="gravitational_waves">Gravitational Waves</option>
-          <option value="planet_formation">Planet Formation</option>
-          <option value="solar_sciences">Solar Sciences</option>
-          <option value="star_formation">Star Formation</option>
-          <option value="dark_matter">Dark Matter</option>
-          <option value="medical">Medical</option>
-          <option value="oceanographic">Oceanographic</option>
-          <option value="data">Data</option>
-          <option value="atmospheric">Atmospheric</option>
-          <option value="biology">Biology</option>
-        </select>
-        <label for="equipment">Equipment:</label>
-        <select
-          id="equipment"
-          name="equipment[]"
-          multiple
-          class="chosen-select"
-        >
-          <option value="telescope">Telescope</option>
-          <option value="microscope">Microscope</option>
-          <option value="spectrometer">Spectrometer</option>
-          <option value="seismometer">Seismometer</option>
-          <option value="barometer">Barometer</option>
-          <option value="centrifuge">Centrifuge</option>
-          <option value="chromatograph">Chromatograph</option>
-          <option value="electron_microscope">Electron Microscope</option>
-        </select>
-      </section>
-      <div class="button-container">
-        <button id="submit">Submit</button>
+                  <label for="interest">Area of Interest:</label>
+                  <select id="interest"
+                          name="interest"
+                          placeholder="Dark Matter"
+                          multiple
+                          class="chosen-select">
+                      <option value="earth_science">Earth Science</option>
+                      <option value="geology">Geology</option>
+                      <option value="space_science">Space Science</option>
+                      <option value="psychology">Psychology</option>
+                      <option value="magnetic_spectrum">Magnetic Spectrum</option>
+                      <option value="spectrometry">Spectrometry</option>
+                      <option value="meteorology">Meteorology</option>
+                      <option value="gravitational_waves">Gravitational Waves</option>
+                      <option value="planet_formation">Planet Formation</option>
+                      <option value="solar_sciences">Solar Sciences</option>
+                      <option value="star_formation">Star Formation</option>
+                      <option value="dark_matter">Dark Matter</option>
+                      <option value="medical">Medical</option>
+                      <option value="oceanographic">Oceanographic</option>
+                      <option value="data">Data</option>
+                      <option value="atmospheric">Atmospheric</option>
+                      <option value="biology">Biology</option>
+                  </select>
+                  <label for="equipment">Equipment:</label>
+                  <select id="equipment"
+                          name="equipment[]"
+                          multiple
+                          class="chosen-select">
+                      <option value="telescope">Telescope</option>
+                      <option value="microscope">Microscope</option>
+                      <option value="spectrometer">Spectrometer</option>
+                      <option value="seismometer">Seismometer</option>
+                      <option value="barometer">Barometer</option>
+                      <option value="centrifuge">Centrifuge</option>
+                      <option value="chromatograph">Chromatograph</option>
+                      <option value="electron_microscope">Electron Microscope</option>
+                  </select>
+          </section>
+          <div class="button-container">
+              <button id="submit">Submit</button>
+          </div>
       </div>
-    </div>
-    <div style="position: absolute; left: 0.5em; bottom: 0.5em">
-      <a style="color: white" href="https://www.spaceappschallenge.org/"
-        >NASA Space Apps Challenge 2023</a
-      >
-    </div>
+      <div style="position: absolute; left: 0.5em; bottom: 0.5em">
+          <a style="color: white" href="https://www.spaceappschallenge.org/">NASA Space Apps Challenge 2023</a>
+      </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-    <script module="module" src="/js/profile.js"></script
-    <!-- //DO NOT DELETE PLEASE ,as this is actually makes it to work -->
-    <script>
-      $(".chosen-select").chosen({
-        no_results_text: "Oops, nothing found!",
-      });
-    </script>
-      });
-    </script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+      <script type="module" src="/js/profile.js"></script>
+      <!-- //DO NOT DELETE PLEASE ,as this is actually makes it to work -->
+      <script>
+          $(".chosen-select").chosen({
+              no_results_text: "Oops, nothing found!",
+          });
+      </script>
   </body>
 </html>
