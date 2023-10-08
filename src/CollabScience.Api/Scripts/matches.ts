@@ -15,7 +15,7 @@ async function loadMatches(projectIds: number[]) {
     if (projects.length === 0) {
         const noMatchesHtml = `
             <h4>No matches found.
-            <a href=/match>Go to the match page to find more matches.</a>
+            <a href=/match>Go to the match page to find more matches.</a>  You can update your <a href="/profile/">profile here</a>
             </h4>
         `;
         document.getElementById("matches")!.innerHTML = noMatchesHtml;
