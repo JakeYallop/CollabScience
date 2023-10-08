@@ -15,16 +15,19 @@
   </head>
 
   <body>
+    <div style="position: absolute; right: 0.5em; top: 0px">
+      <a style="color: white" href="https://github.com/JakeYallop/CollabScience"
+        >Read the code at
+        <img
+          style="height: 2em; line-height: 1em; top: 0.5em; position: relative"
+          src="/images/GitHub_Logo_White.png"
+      /></a>
+    </div>
     <div class="container">
       <section id="personalInfo">
         <h2>Personal Information</h2>
         <label for="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Euan Murphy"
-        />
+        <input type="text" id="name" name="name" placeholder="Euan Murphy" />
         <label for="email">Email:</label>
         <input
           type="email"
@@ -40,23 +43,13 @@
           placeholder="Aberdeen"
         />
         <label for="timeZone">Time Zone:</label>
-        <input
-          type="text"
-          id="timeZone"
-          name="timeZone"
-          placeholder="BST"
-        />
+        <input type="text" id="timeZone" name="timeZone" placeholder="BST" />
       </section>
 
       <section id="preferences">
         <h2>Preferences</h2>
         <label for="time">How much time do you have to contribute?</label>
-        <input
-          type="text"
-          id="time"
-          name="time"
-          placeholder="15h"
-        />
+        <input type="text" id="time" name="time" placeholder="15h" />
 
         <label for="expertise">Expertise:</label>
         <form method="get">
@@ -136,6 +129,11 @@
       <div class="button-container">
         <button id="submit">Submit</button>
       </div>
+    </div>
+    <div style="position: absolute; left: 0.5em; bottom: 0.5em">
+      <a style="color: white" href="https://www.spaceappschallenge.org/"
+        >NASA Space Apps Challenge 2023</a
+      >
     </div>
 
     <script module="module" src="/js/profile.js"></script>
