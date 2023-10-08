@@ -1,0 +1,30 @@
+flowchart LR
+    P[Match Parameters] --> A{Has profile?}
+    A --> |Yes|B{Viewed all projects?}
+    A --> |No|T[Go to Random matcher]
+    B --> |Yes|T
+    T -->M{Has unviewed projects?}
+    subgraph Random Matcher
+        M --> |Yes|Final[Get random project from selection]
+        M --> |No|Q{Has unmatched projects?}
+        Q --> |Yes|Final
+        Q --> |No|R[No more projects left to view]
+    end
+    Final --> L
+    R --> L
+    B --> |No|S[Weighted Matcher]
+    S --> D[Compute Weighting]
+    subgraph Weighted Matcher
+    subgraph For each unseen project
+    D --> E[Match areas of interest]
+    D --> F[Match expertise]
+    E --> G[% Areas of interest matching * Weighting]
+    F --> H[% Expertise matching * Weighting]
+    G --> I[Areas + Expertise final value]
+    H --> I
+    end
+    end
+    I --> J[Sort by weighting]
+    J --> K[Take first N results]
+    K --> L[Output projects]
+
