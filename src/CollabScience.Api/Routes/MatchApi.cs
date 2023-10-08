@@ -10,20 +10,20 @@ public static class MatchApi
         group.MapPost("", (MatchParametersData parameters, MatchingService matchingService) =>
         {
             return matchingService.ComputeMatchAsync(new(
-                parameters.AreasOfInterest ?? Array.Empty<string>(),
-                parameters.Equipment ?? Array.Empty<string>(),
-                parameters.Expertise ?? Array.Empty<string>(),
-                parameters.AlreadyVIewed ?? Array.Empty<int>()
+                parameters.AreasOfInterest,
+                parameters.Equipment,
+                parameters.Expertise,
+                parameters.AlreadyViewed
             ));
         });
 
         group.MapPost("/{count:int}", (int count, MatchParametersData parameters, MatchingService matchingService) =>
         {
             return matchingService.ComputeMatchAsync(new(
-                parameters.AreasOfInterest ?? Array.Empty<string>(),
-                parameters.Equipment ?? Array.Empty<string>(),
-                parameters.Expertise ?? Array.Empty<string>(),
-                parameters.AlreadyVIewed ?? Array.Empty<int>()
+                parameters.AreasOfInterest,
+                parameters.Equipment,
+                parameters.Expertise,
+                parameters.AlreadyViewed
             ), count);
         });
 
@@ -36,6 +36,6 @@ public class MatchParametersData
     public string[]? AreasOfInterest { get; init; }
     public string[]? Equipment { get; init; }
     public string[]? Expertise { get; init; }
-    public int[]? AlreadyVIewed { get; init; }
+    public int[]? AlreadyViewed { get; init; }
 }
 

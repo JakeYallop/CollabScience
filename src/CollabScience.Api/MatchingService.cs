@@ -24,9 +24,9 @@ public sealed class ParametersMatchingService : MatchingService
     public override async Task<IEnumerable<Project>> ComputeMatchAsync(MatchParameters parameters, int numberOfMatches = 1)
     {
         var projects = await _projectsRepository.GetProjectsAsync().ConfigureAwait(false);
-        if (parameters.AlreadyMatched.Count == projects.Length)
+        if (parameters.AlreadyViewed.Count == projects.Length || parameters.IsEmptyProfile)
         {
-            return new[] { RandomSampleMatcher.Match(projects, parameters) };
+            return RandomSampleMatcher.Match(projects, parameters, numberOfMatches);
         }
 
         return projects.OrderByDescending(x => ComputeWeightForProject(x, parameters)).Take(numberOfMatches);
@@ -38,7 +38,7 @@ public sealed class ParametersMatchingService : MatchingService
         var expertise = ArrayUtilties.ProportionMatchingInSelections(project.Expertise.ToHashSet(), parameters.Expertise) * ExpertiseWeight;
         var result = areasOfInterest + expertise;
 
-        if (parameters.AlreadyMatched.Contains(project.Id))
+        if (parameters.AlreadyViewed.Contains(project.Id))
         {
             result = double.MinValue;
         }
@@ -75,16 +75,16 @@ public static class ArrayUtilties
 
 public static class RandomSampleMatcher
 {
-    public static Project Match(Project[] projects, MatchParameters? parameters = null)
+    public static IEnumerable<Project> Match(Project[] projects, MatchParameters parameters, int count = 1)
     {
-        if (parameters is null || parameters.AlreadyMatched is null || parameters.AlreadyMatched.Count is 0)
+        if (parameters is null || parameters.AlreadyViewed is null || parameters.AlreadyViewed.Count is 0)
         {
-            return projects[Random.Shared.Next(0, projects.Length)];
+            return projects.OrderBy(x => Random.Shared.Next(0, projects.Length)).Take(count);
         }
         else
         {
-            var unseenProjects = projects.Where(x => !parameters.AlreadyMatched.Contains(x.Id)).ToArray();
-            return unseenProjects[Random.Shared.Next(0, unseenProjects.Length)];
+            var unseenProjects = projects.Where(x => !parameters.AlreadyViewed.Contains(x.Id)).ToArray();
+            return unseenProjects.OrderBy(x => Random.Shared.Next(0, unseenProjects.Length)).Take(count);
         }
     }
 }
