@@ -8,7 +8,7 @@
     overflow: hidden;
   }
   
-  .tinder {
+  .collabmatch {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -20,11 +20,11 @@
     justify-content: flex-end; 
   }
   
-  .loaded.tinder {
+  .loaded.collabmatch {
     opacity: 1;
   }
   
-  .tinder--status {
+  .collabmatch--status {
     position: absolute;
     top: 50%;
     margin-top: -30px;
@@ -34,7 +34,7 @@
     pointer-events: none;
   }
   
-  .tinder--status i {
+  .collabmatch--status i {
     font-size: 100px;
     opacity: 0;
     transform: scale(0.3);
@@ -44,17 +44,17 @@
     margin-left: -50px;
   }
   
-  .tinder_love .fa-heart {
+  .collabmatch_love .fa-heart {
     opacity: 0.7;
     transform: scale(1);
   }
   
-  .tinder_nope .fa-remove {
+  .collabmatch_nope .fa-remove {
     opacity: 0.7;
     transform: scale(1);
   }
   
-  .tinder--cards {
+  .collabmatch--cards {
     flex-grow: 1;
     padding-top: 40px;
     text-align: center;
@@ -64,7 +64,7 @@
     z-index: 1;
   }
   
-  .tinder--card {
+  .collabmatch--card {
     display: flex;
     flex-direction:column;
     width: 90vw;
@@ -82,20 +82,20 @@
     height: 60vh;
   }
   
-  .moving.tinder--card {
+  .moving.collabmatch--card {
     transition: none;
     cursor: -webkit-grabbing;
     cursor: -moz-grabbing;
     cursor: grabbing;
   }
   
-  .tinder--card img {
+  .collabmatch--card img {
     max-width: 100%;
     flex-shrink:1;
     pointer-events: none;
   }
   
-  .tinder--card h3 {
+  .collabmatch--card h3 {
     margin-top: 32px;
     font-size: 32px;
     padding: 0 16px;
@@ -103,11 +103,11 @@
     color: black;
   }
 
-  .tinder--card div {
+  .collabmatch--card div {
     flex-grow:1;
   }
   
-  .tinder--buttons {
+  .collabmatch--buttons {
     flex: 0 0 100px;
     text-align: center;
     padding-top: 20px;
@@ -115,7 +115,7 @@
      z-index: 3; 
   }
 
-  .tinder--buttons button {
+  .collabmatch--buttons button {
     border-radius: 50%;
     line-height: 60px;
     width: 60px;
@@ -126,11 +126,11 @@
     padding: 0;
   }
   
-  .tinder--buttons button:focus {
+  .collabmatch--buttons button:focus {
     outline: 0;
   }
   
-  .tinder--buttons i {
+  .collabmatch--buttons i {
     font-size: 32px;
     vertical-align: middle;
   }
@@ -169,11 +169,11 @@
 
 
 @media (orientation: portrait) {
-    .tinder--buttons {
+    .collabmatch--buttons {
         margin-bottom:1em;
     }
 
-    .tinder--card img {
+    .collabmatch--card img {
         display: block;
         max-height: 15vh;
         width: auto;

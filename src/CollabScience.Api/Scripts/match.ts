@@ -1,9 +1,9 @@
 import matchApi from "./matchApi.js";
 import { addMatch, addViewed, getProfileInformation } from "./profile.js";
 
-const tinderContainer = document.querySelector(".tinder")!;
-const cardContainer = document.querySelector(".tinder--cards")!;
-const allCards = document.querySelectorAll(".tinder--card")!;
+const collabmatchContainer = document.querySelector(".collabmatch")!;
+const cardContainer = document.querySelector(".collabmatch--cards")!;
+const allCards = document.querySelectorAll(".collabmatch--card")!;
 const nope = document.getElementById("nope")!;
 const love = document.getElementById("love")!;
 let pendingProjectIds: number[] = [];
@@ -34,9 +34,10 @@ matchApi
         });
     });
 checkForNoMoreCards();
+initCards();
 
 function initCards() {
-    const newCards = document.querySelectorAll(".tinder--card:not(.removed)") as NodeListOf<HTMLDivElement>;
+    const newCards = document.querySelectorAll(".collabmatch--card:not(.removed)") as NodeListOf<HTMLDivElement>;
 
     newCards.forEach(function (card, index) {
         card.style.zIndex = "" + (allCards.length - index);
@@ -44,7 +45,7 @@ function initCards() {
         card.style.filter = "blur(" + (0.5 - (10 - index) / 20) + "em)";
     });
 
-    tinderContainer.classList.add("loaded");
+    collabmatchContainer.classList.add("loaded");
     checkForNoMoreCards();
 }
 
@@ -76,7 +77,7 @@ async function cardRemoved(isMatch: boolean, projectId: number) {
         alreadyMatched: profile?.matchedWith,
     });
     setTimeout(async () => {
-        const removedCards = document.querySelectorAll(".tinder--card.removed") as NodeListOf<HTMLDivElement>;
+        const removedCards = document.querySelectorAll(".collabmatch--card.removed") as NodeListOf<HTMLDivElement>;
         removedCards.forEach(card => card.remove());
         checkForNoMoreCards();
     }, 2000);
@@ -90,7 +91,7 @@ async function cardRemoved(isMatch: boolean, projectId: number) {
 
 function createButtonListener(love) {
     return function (event) {
-        var cards = document.querySelectorAll(".tinder--card:not(.removed)") as NodeListOf<HTMLDivElement>;
+        var cards = document.querySelectorAll(".collabmatch--card:not(.removed)") as NodeListOf<HTMLDivElement>;
         var moveOutWidth = document.body.clientWidth * 1.5;
 
         if (!cards.length) return false;
@@ -123,7 +124,7 @@ export function getId(card: HTMLDivElement) {
 }
 function addCard(id: number, title: string, description: string, imageUrl?: string) {
     const cardHtml = `
-        <div class="tinder--card">
+        <div class="collabmatch--card">
             <img src="${imageUrl ?? "../match/ProjectImages/Placeholder.png"}" />
             <h3>${title}</h3>
             <div class="description">
@@ -153,8 +154,8 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
         if (event.deltaX === 0) return;
         if (event.center.x === 0 && event.center.y === 0) return;
 
-        tinderContainer.classList.toggle("tinder_love", event.deltaX > 0);
-        tinderContainer.classList.toggle("tinder_nope", event.deltaX < 0);
+        collabmatchContainer.classList.toggle("collabmatch_love", event.deltaX > 0);
+        collabmatchContainer.classList.toggle("collabmatch_nope", event.deltaX < 0);
 
         if (event.deltaX > 0) {
             matchResut.isMatch = true;
@@ -179,8 +180,8 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
 
     hammertime.on("panend", function (event) {
         card.classList.remove("moving");
-        tinderContainer.classList.remove("tinder_love");
-        tinderContainer.classList.remove("tinder_nope");
+        collabmatchContainer.classList.remove("collabmatch_love");
+        collabmatchContainer.classList.remove("collabmatch_nope");
 
         var moveOutWidth = document.body.clientWidth;
         var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
