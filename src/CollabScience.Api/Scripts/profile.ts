@@ -1,4 +1,4 @@
-export const ProfileKey = "UserProfile";
+const ProfileKey = "UserProfile";
 
 export interface ProfileData {
     name: string;

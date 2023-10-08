@@ -4,8 +4,8 @@
     "noEmitOnError": true,
     "removeComments": false,
     "sourceMap": false,
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES2015",
+    "module": "ES2015",
     "outDir": "wwwroot/js",
     /* Linting */
     "strict": true,
