@@ -40,7 +40,7 @@ function initCards() {
     const newCards = document.querySelectorAll(".collabmatch--card:not(.removed)") as NodeListOf<HTMLDivElement>;
 
     newCards.forEach(function (card, index) {
-        card.style.zIndex = "" + (allCards.length - index);
+        card.style.zIndex = "" + (20 - index);
         card.style.transform = "scale(" + (20 - index) / 20 + ") translateY(-" + 30 * index + "px)";
         card.style.filter = "blur(" + (0.5 - (10 - index) / 20) + "em)";
     });
