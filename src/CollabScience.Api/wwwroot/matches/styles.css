@@ -1,7 +1,14 @@
+.table-container {
+    max-height: 500px; 
+    margin-top: 20px;
+    width: 100%; 
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    header: 1px solid #ddd;
+
 }
 
 th, td {
@@ -14,8 +21,14 @@ th {
     background-color: #4CAF50;
     color: white;
 }
-
 tr:hover {
     background-color: #aadfa3;
 }
 
+
+.footer-link {
+    position: fixed;
+    left: 0.5em;
+    bottom: 0.5em;
+    color: white;
+}
