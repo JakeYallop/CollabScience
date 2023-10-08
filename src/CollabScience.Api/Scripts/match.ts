@@ -96,6 +96,8 @@ function createButtonListener(love) {
         initCards();
 
         event.preventDefault();
+
+        cardRemoved(love, getId(card));
     };
 }
 
