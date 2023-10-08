@@ -106,3 +106,40 @@ window.addEventListener("DOMContentLoaded", () => {
         window.location.assign("/match");
     });
 });
+
+if (document.querySelector("#resetMatches") != null) {
+    if (getProfileInformation() == null) {
+        (document.querySelector("#resetMatches")! as HTMLButtonElement).style.display = "none";
+    }
+
+    (document.querySelector("#resetMatches")! as HTMLButtonElement).addEventListener("click", () => {
+        clearProfile();
+
+        const name = (document.querySelector("#name") as HTMLInputElement)?.value;
+        const email = (document.querySelector("#email") as HTMLInputElement)?.value;
+        const location = (document.querySelector("#location") as HTMLInputElement)?.value;
+        const timeZone = (document.querySelector("#timezone") as HTMLInputElement)?.value;
+        let contributionTime = (document.querySelector("#contribution-time") as HTMLInputElement).value;
+        const expertise = (document.querySelector("#expertise") as HTMLInputElement).value.split(",");
+        const areasOfInterest = (document.querySelector("#interest") as HTMLInputElement).value.split(",");
+        const equipment = (document.querySelector("#equipment") as HTMLInputElement).value.split(",");
+
+        contributionTime = contributionTime ? contributionTime : "0";
+
+        const profile: ProfileData = {
+            name,
+            email,
+            location,
+            timeZone,
+            areasOfInterest,
+            contributionTime,
+            expertise,
+            equipment,
+            matchedWith: [],
+            viewed: [],
+            favourites: [],
+        };
+
+        saveProfile(profile);
+    });
+}
