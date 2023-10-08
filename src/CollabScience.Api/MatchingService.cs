@@ -34,7 +34,7 @@ public sealed class ParametersMatchingService : MatchingService
 
     private static double ComputeWeightForProject(Project project, MatchParameters parameters)
     {
-        var areasOfInterest = ArrayUtilties.ProportionMatchingInSelections(project.AreasOfResearch.ToHashSet(), parameters.AreasOfInterest) * AreasOfInterestWeight;
+        var areasOfInterest = ArrayUtilties.ProportionMatchingInSelections(project.Area.ToHashSet(), parameters.AreasOfInterest) * AreasOfInterestWeight;
         var expertise = ArrayUtilties.ProportionMatchingInSelections(project.Expertise.ToHashSet(), parameters.Expertise) * ExpertiseWeight;
         var result = areasOfInterest + expertise;
 

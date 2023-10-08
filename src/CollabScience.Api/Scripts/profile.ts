@@ -71,7 +71,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!submit) {
         return;
     }
-    submit.addEventListener("click", () => {
+    submit.addEventListener("click", e => {
+        e.preventDefault();
         const name = (document.querySelector("#name") as HTMLInputElement)?.value;
         const email = (document.querySelector("#email") as HTMLInputElement)?.value;
         const location = (document.querySelector("#location") as HTMLInputElement)?.value;
@@ -98,6 +99,6 @@ window.addEventListener("DOMContentLoaded", () => {
         };
 
         saveProfile(profile);
-        window.location.href = "/match/";
+        window.location.assign("/match");
     });
 });

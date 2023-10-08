@@ -12,5 +12,5 @@ public class Project
     public string[] TimeToHelp { get; init; }
     public string[] Commitment { get; init; }
     public string[] Expertise { get; init; }
-    public string[] AreasOfResearch { get; init; }
+    public string[] Area { get; init; }
 }
