@@ -64,6 +64,16 @@ button {
     margin: 4px 2px;
 }
 
+#resetMatches {
+    background-color: #b05d0b;
+}
+
+    #resetMatches:hover {
+        background-color: #854608;
+        border-color: #b05d0b;
+    }
+
+
 label {
     margin-bottom: 10px;
     font-size: 16px;
