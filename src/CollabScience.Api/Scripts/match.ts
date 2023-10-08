@@ -61,13 +61,13 @@ async function cardRemoved(isMatch: boolean, projectId: number) {
         equipment: profile?.equipment,
     });
     setTimeout(async () => {
-        const response = await promise;
-        const data = await response.json();
-        const info = data[0];
         const removedCards = document.querySelectorAll(".tinder--card.removed") as NodeListOf<HTMLDivElement>;
         removedCards.forEach(card => card.remove());
-        addCard(info.id, info.name, info.description, info.imageUrl);
-    }, 500);
+    }, 2000);
+    const response = await promise;
+    const data = await response.json();
+    const info = data[0];
+    addCard(info.id, info.name, info.description, info.imageUrl);
 }
 
 function createButtonListener(love) {
