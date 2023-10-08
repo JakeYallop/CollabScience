@@ -13,7 +13,7 @@ public static class MatchApi
                 parameters.AreasOfInterest ?? Array.Empty<string>(),
                 parameters.Equipment ?? Array.Empty<string>(),
                 parameters.Expertise ?? Array.Empty<string>(),
-                parameters.AlreadyMatched ?? Array.Empty<int>()
+                parameters.AlreadyVIewed ?? Array.Empty<int>()
             ));
         });
 
@@ -23,8 +23,8 @@ public static class MatchApi
                 parameters.AreasOfInterest ?? Array.Empty<string>(),
                 parameters.Equipment ?? Array.Empty<string>(),
                 parameters.Expertise ?? Array.Empty<string>(),
-                parameters.AlreadyMatched ?? Array.Empty<int>()
-            ));
+                parameters.AlreadyVIewed ?? Array.Empty<int>()
+            ), count);
         });
 
         return group;
@@ -36,6 +36,6 @@ public class MatchParametersData
     public string[]? AreasOfInterest { get; init; }
     public string[]? Equipment { get; init; }
     public string[]? Expertise { get; init; }
-    public int[]? AlreadyMatched { get; init; }
+    public int[]? AlreadyVIewed { get; init; }
 }
 

@@ -3,13 +3,12 @@
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,
-    "sourceMap": true,
-    "target": "ES2015",
+    "sourceMap": false,
+    "target": "ESNext",
+    "module": "ESNext",
     "outDir": "wwwroot/js",
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
   "exclude": ["node_modules", "wwwroot"]

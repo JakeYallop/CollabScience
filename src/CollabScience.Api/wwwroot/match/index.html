@@ -1,14 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
-    <link rel="stylesheet" type="text/css" href="/src/colors.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CollabScience - Match</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Match Projects</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/match.ts"></script>
+    <div class="tinder">
+      <div class="tinder--status">
+        <i class="fa fa-remove"></i>
+        <!-- <i class="fa fa-star"></i> -->
+        <i class="fa fa-heart"></i>
+      </div>
+
+      <div class="tinder--cards"></div>
+      <div class="tinder--buttons">
+        <button id="nope"><i class="fa fa-remove"></i></button>
+        <button id="favorite"><i class="fa fa-star"></i></button>
+        <button id="love"><i class="fa fa-heart"></i></button>
+      </div>
+    </div>
+
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script type="module" src="/js/match.js"></script>
   </body>
 </html>

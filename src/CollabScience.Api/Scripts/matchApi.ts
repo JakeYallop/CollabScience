@@ -1,17 +1,17 @@
-import { makeRequest } from "http";
+import { makeRequest } from "./http.js";
 
 export interface MatchParameters {
     areasOfInterest?: string[];
     equipment?: string[];
     expertise?: string[];
-    alreadyMatched?: number[];
+    alreadyViewed?: number[];
 }
 
 export interface Project {
-    id: string;
-    projectName: string;
+    id: number;
+    name: string;
     description: string;
-    link: string;
+    url: string;
     imageUrl: string;
     timeToHelp: string[];
     commitment: string;
@@ -21,8 +21,8 @@ export interface Project {
 
 const BASE = "/api/match";
 const urls = {
-    postNextMatch: `${BASE}/match`,
-    postNextMatches: (count: number) => `${BASE}/match/${count}`,
+    postNextMatch: `${BASE}`,
+    postNextMatches: (count: number) => `${BASE}/${count}`,
 };
 
 const match = (parameters: MatchParameters) => {
