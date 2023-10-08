@@ -25,15 +25,6 @@ th {
     color: white;
 }
 
-tr {
-    cursor:pointer;
-}
-
-tr:hover {
-    background-color: #aadfa3;
-}
-
-
 .footer-link {
     position: fixed;
     left: 0.5em;

@@ -30,6 +30,7 @@ async function loadMatches(projectIds: number[]) {
 <tr>
 <th>Project</th>
 <th>Description</th>
+<th></th>
 </tr>
 ${projects
     .map(
@@ -37,6 +38,7 @@ ${projects
         <tr>
         <td>${project.name}</td>
         <td>${project.description}</td>
+        <td><a href="${project.url}" target="_blank" >Go to project page</a></td>
         </tr>
         `
     )
