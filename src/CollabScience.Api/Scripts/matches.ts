@@ -13,6 +13,12 @@ async function loadMatches(projectIds: number[]) {
     const projectsResponse = await projectsApi.getProjects(projectIds);
     const projects = await projectsResponse.json();
     if (projects.length === 0) {
+        const noMatchesHtml = `
+            <h4>No matches found.
+            <a href=/match>Go to the match page to find more matches.</a>
+            </h4>
+        `;
+        document.getElementById("matches")!.innerHTML = noMatchesHtml;
         return;
     }
 
