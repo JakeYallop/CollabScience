@@ -3,4 +3,9 @@
     height: 100%;
     width: 100%;
     /* padding-bottom: 3em; */
+    padding: 0px 4em
+}
+
+.hidden {
+    display: none;
 }

@@ -181,3 +181,7 @@
         object-fit: contain;
     }
 }
+
+.hidden {
+    display: none;
+}

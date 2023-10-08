@@ -45,6 +45,14 @@ function initCards() {
     });
 
     tinderContainer.classList.add("loaded");
+
+    const profile = getProfileInformation();
+    const viewMatches = document.getElementById("view-matches");
+    if (profile?.matchedWith.length) {
+        viewMatches?.classList.remove("hidden");
+    } else {
+        viewMatches?.classList.add("hidden");
+    }
 }
 
 async function cardRemoved(isMatch: boolean, projectId: number) {
@@ -158,12 +166,10 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
         if (!event.target.classList.contains("description")) {
             event.target.style.transform =
                 "translate(" + event.deltaX + "px, " + event.deltaY + "px) rotate(" + rotate + "deg)";
-        }
-        else {
+        } else {
             event.target.parentElement.style.transform =
                 "translate(" + event.deltaX + "px, " + event.deltaY + "px) rotate(" + rotate + "deg)";
         }
-
     });
 
     hammertime.on("panend", function (event) {
@@ -173,7 +179,6 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
 
         var moveOutWidth = document.body.clientWidth;
         var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
-
 
         if (!event.target.classList.contains("description")) {
             event.target.classList.toggle("removed", !keep);
@@ -193,8 +198,7 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
 
                 cardRemoved(matchResut.isMatch, getId(card));
             }
-        }
-        else {
+        } else {
             event.target.parentElement.classList.toggle("removed", !keep);
             if (keep) {
                 event.target.parentElement.style.transform = "";
@@ -213,9 +217,6 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
                 cardRemoved(matchResut.isMatch, getId(card));
             }
         }
-
-
-
     });
 
     initCards();
