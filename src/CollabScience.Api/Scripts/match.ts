@@ -47,19 +47,18 @@ function initCards() {
 async function cardRemoved(isMatch: boolean, projectId: number) {
     initCards();
     const profile = getProfileInformation();
-    if (!profile) {
-        return;
+    if (profile) {
+        addViewed(projectId);
+        if (isMatch) {
+            addMatch(projectId);
+        }
     }
 
-    addViewed(projectId);
-    if (isMatch) {
-        addMatch(projectId);
-    }
     const promise = matchApi.match({
-        alreadyViewed: profile.viewed,
-        areasOfInterest: profile.areasOfInterest,
-        expertise: profile.expertise,
-        equipment: profile.equipment,
+        alreadyViewed: profile?.viewed,
+        areasOfInterest: profile?.areasOfInterest,
+        expertise: profile?.expertise,
+        equipment: profile?.equipment,
     });
     setTimeout(async () => {
         const response = await promise;
