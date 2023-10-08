@@ -1,0 +1,7 @@
+.shown {
+    display: block;
+}
+
+#no-profile-message {
+    display: none;
+}
