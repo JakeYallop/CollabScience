@@ -72,13 +72,13 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
     }
     submit.addEventListener("click", () => {
-        const name = (document.querySelector("#name") as HTMLInputElement).value;
-        const email = (document.querySelector("#email") as HTMLInputElement).value;
-        const location = (document.querySelector("#location") as HTMLInputElement).value;
-        const timeZone = (document.querySelector("#timezone") as HTMLInputElement).value;
+        const name = (document.querySelector("#name") as HTMLInputElement)?.value;
+        const email = (document.querySelector("#email") as HTMLInputElement)?.value;
+        const location = (document.querySelector("#location") as HTMLInputElement)?.value;
+        const timeZone = (document.querySelector("#timezone") as HTMLInputElement)?.value;
         let contributionTime = (document.querySelector("#contribution-time") as HTMLInputElement).value;
-        const areasOfInterest = (document.querySelector("#areas-of-interest") as HTMLInputElement).value.split(",");
         const expertise = (document.querySelector("#expertise") as HTMLInputElement).value.split(",");
+        const areasOfInterest = (document.querySelector("#interest") as HTMLInputElement).value.split(",");
         const equipment = (document.querySelector("#equipment") as HTMLInputElement).value.split(",");
 
         contributionTime = contributionTime ? contributionTime : "0";
@@ -98,6 +98,6 @@ window.addEventListener("DOMContentLoaded", () => {
         };
 
         saveProfile(profile);
-        window.location.href = "/index.html";
+        window.location.href = "/match/";
     });
 });
