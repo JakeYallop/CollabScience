@@ -4,22 +4,13 @@ namespace CollabScience.Api.Models;
 
 public class Project
 {
-    [JsonConstructor]
-    public Project(int id, string name, string description, Uri url)
-    {
-        Id = id;
-        ProjectName = name;
-        Description = description;
-        Link = url;
-    }
-
-    public int Id { get; }
-    public string ProjectName { get; }
-    public string Description { get; }
-    public Uri Link { get; }
-    public Uri ImageUrl { get; }
-    public string[] TimeToHelp { get; }
-    public string Commitment { get; }
-    public string[] Expertise { get; }
-    public string[] AreasOfResearch { get; }
+    public int Id { get; init; }
+    public string Name { get; init; }
+    public string Description { get; init; }
+    public Uri Url { get; init; }
+    public Uri ImageUrl { get; init; }
+    public string[] TimeToHelp { get; init; }
+    public string[] Commitment { get; init; }
+    public string[] Expertise { get; init; }
+    public string[] AreasOfResearch { get; init; }
 }

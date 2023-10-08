@@ -8,9 +8,9 @@ export interface ProfileData {
     areasOfInterest: string[];
     contributionTime: string;
     expertise: string[];
-    areaOfInterest: string[];
     equipment: string[];
     matchedWith: number[];
+    viewed: number[];
     favourites: number[];
 }
 
@@ -46,6 +46,16 @@ export function addFavourite(projectId: number) {
     saveProfile(profile);
 }
 
+export function addViewed(projectId: number) {
+    const profile = getProfileInformation();
+    if (!profile) {
+        return;
+    }
+
+    profile.viewed.push(projectId);
+    saveProfile(profile);
+}
+
 export function addMatch(profileId: number) {
     const profile = getProfileInformation();
     if (!profile) {
@@ -57,7 +67,11 @@ export function addMatch(profileId: number) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#submit")!.addEventListener("click", () => {
+    const submit = document.querySelector("#submit");
+    if (!submit) {
+        return;
+    }
+    submit.addEventListener("click", () => {
         const name = (document.querySelector("#name") as HTMLInputElement).value;
         const email = (document.querySelector("#email") as HTMLInputElement).value;
         const location = (document.querySelector("#location") as HTMLInputElement).value;
@@ -77,9 +91,9 @@ window.addEventListener("DOMContentLoaded", () => {
             areasOfInterest,
             contributionTime,
             expertise,
-            areaOfInterest: [],
             equipment,
             matchedWith: [],
+            viewed: [],
             favourites: [],
         };
 
