@@ -52,8 +52,10 @@ export function addViewed(projectId: number) {
         return;
     }
 
-    profile.viewed.push(projectId);
-    saveProfile(profile);
+    if (!profile.viewed.includes(projectId)) {
+        profile.viewed.push(projectId);
+        saveProfile(profile);
+    }
 }
 
 export function addMatch(profileId: number) {
@@ -62,8 +64,10 @@ export function addMatch(profileId: number) {
         return;
     }
 
-    profile.matchedWith.push(profileId);
-    saveProfile(profile);
+    if (!profile.matchedWith.includes(profileId)) {
+        profile.matchedWith.push(profileId);
+        saveProfile(profile);
+    }
 }
 
 window.addEventListener("DOMContentLoaded", () => {

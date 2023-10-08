@@ -4,7 +4,7 @@
     "noEmitOnError": true,
     "removeComments": false,
     "sourceMap": false,
-    "target": "ES2015",
+    "target": "ES2016",
     "module": "ES2015",
     "outDir": "wwwroot/js",
     /* Linting */

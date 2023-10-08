@@ -13,7 +13,9 @@ public static class MatchApi
                 parameters.AreasOfInterest,
                 parameters.Equipment,
                 parameters.Expertise,
-                parameters.AlreadyViewed
+                parameters.PendingMatches,
+                parameters.AlreadyViewed,
+                parameters.AlreadyMatched
             ));
         });
 
@@ -23,7 +25,9 @@ public static class MatchApi
                 parameters.AreasOfInterest,
                 parameters.Equipment,
                 parameters.Expertise,
-                parameters.AlreadyViewed
+                parameters.PendingMatches,
+                parameters.AlreadyViewed,
+                parameters.AlreadyMatched
             ), count);
         });
 
@@ -36,6 +40,8 @@ public class MatchParametersData
     public string[]? AreasOfInterest { get; init; }
     public string[]? Equipment { get; init; }
     public string[]? Expertise { get; init; }
+    public int[]? PendingMatches { get; init; }
     public int[]? AlreadyViewed { get; init; }
+    public int[]? AlreadyMatched { get; init; }
 }
 
