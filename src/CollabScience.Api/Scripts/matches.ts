@@ -19,6 +19,7 @@ async function loadMatches(projectIds: number[]) {
             </h4>
         `;
         document.getElementById("matches")!.innerHTML = noMatchesHtml;
+        document.getElementById("go-to-match-page")?.remove();
         return;
     }
 
