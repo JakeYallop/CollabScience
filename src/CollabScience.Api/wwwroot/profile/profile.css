@@ -73,3 +73,11 @@ label {
     width: calc(100% - 20px);
     padding: 10px;
 }
+
+@media (orientation: portrait) {
+    .container {
+        max-height: calc(100vh - 10em);
+        margin-top: 4em;
+        overflow-y:auto;
+    }
+}

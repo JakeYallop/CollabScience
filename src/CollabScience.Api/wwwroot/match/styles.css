@@ -161,3 +161,16 @@
 }
 
 
+@media (orientation: portrait) {
+    .tinder--buttons {
+        margin-bottom:1em;
+    }
+
+    .tinder--card img {
+        display: block;
+        max-height: 15vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+}
