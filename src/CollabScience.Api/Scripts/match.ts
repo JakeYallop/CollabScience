@@ -172,31 +172,48 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
         var moveOutWidth = document.body.clientWidth;
         var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
-        event.target.classList.toggle("removed", !keep);
-        if (keep) {
-            event.target.style.transform = "";
-        } else {
-            var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
-            var toX = event.deltaX > 0 ? endX : -endX;
-            var endY = Math.abs(event.velocityY) * moveOutWidth;
-            var toY = event.deltaY > 0 ? endY : -endY;
-            var xMulti = event.deltaX * 0.03;
-            var yMulti = event.deltaY / 80;
-            var rotate = xMulti * yMulti;
 
+        if (!event.target.classList.contains("description")) {
+            event.target.classList.toggle("removed", !keep);
+            if (keep) {
+                event.target.style.transform = "";
+            } else {
+                var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
+                var toX = event.deltaX > 0 ? endX : -endX;
+                var endY = Math.abs(event.velocityY) * moveOutWidth;
+                var toY = event.deltaY > 0 ? endY : -endY;
+                var xMulti = event.deltaX * 0.03;
+                var yMulti = event.deltaY / 80;
+                var rotate = xMulti * yMulti;
 
-
-            if (!event.target.classList.contains("description")) {
                 event.target.style.transform =
                     "translate(" + toX + "px, " + (toY + event.deltaY) + "px) rotate(" + rotate + "deg)";
+
+                cardRemoved(matchResut.isMatch, getId(card));
             }
-            else {
+        }
+        else {
+            event.target.parentElement.classList.toggle("removed", !keep);
+            if (keep) {
+                event.target.parentElement.style.transform = "";
+            } else {
+                var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
+                var toX = event.deltaX > 0 ? endX : -endX;
+                var endY = Math.abs(event.velocityY) * moveOutWidth;
+                var toY = event.deltaY > 0 ? endY : -endY;
+                var xMulti = event.deltaX * 0.03;
+                var yMulti = event.deltaY / 80;
+                var rotate = xMulti * yMulti;
+
                 event.target.parentElement.style.transform =
                     "translate(" + toX + "px, " + (toY + event.deltaY) + "px) rotate(" + rotate + "deg)";
-            }
 
-            cardRemoved(matchResut.isMatch, getId(card));
+                cardRemoved(matchResut.isMatch, getId(card));
+            }
         }
+
+
+
     });
 
     initCards();
