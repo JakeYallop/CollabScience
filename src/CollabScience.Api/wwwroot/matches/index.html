@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>My matches</title>
   </head>
-  <body>
-      <main class="container">
+  <body class="container">
     <div style="position: absolute; right: 0.5em; top: 0px">
       <a style="color: white" href="https://github.com/JakeYallop/CollabScience"
         >Read the code at
@@ -18,19 +17,16 @@
           src="/images/GitHub_Logo_White.png"
       /></a>
     </div>
-        <h1>Matches</h1>
-        <div id="no-profile-message">
-            <h2>No profile found, <a href="/profile">go to the profile page to setup a profile</a></h3>
-        </div>
-        <div id="matches">
-        </div>
-        
-        <div style="position: absolute; left: 0.5em; bottom: 0.5em">
-            <a style="color: white" href="https://www.spaceappschallenge.org/"
-            >NASA Space Apps Challenge 2023</a
-            >
-        </div>
-    </main>
+    <h1>Matches</h1>
+
+    <div id="matches"></div>
+
+    <div style="position: absolute; left: 0.5em; bottom: 0.5em">
+      <a style="color: white" href="https://www.spaceappschallenge.org/"
+        >NASA Space Apps Challenge 2023</a
+      >
+    </div>
+    <script type="module" src="/js/profileCheck.js"></script>
     <script type="module" src="/js/matches.js"></script>
   </body>
 </html>
