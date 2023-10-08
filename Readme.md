@@ -17,7 +17,7 @@ CollabScience was developed for the [2023 NASA International Space Apps Challeng
 ### Deployment 
 Code can be accessed by our platform directly via : [CollabScience.Earth.](https://collabscience.earth/)
 
-Potential Extensions
+### Potential Extensions
 
 1.Submission Dynamics: Incorporate a comprehensive submission page and procedure, streamlining the introduction of new science projects to the platform.
 
