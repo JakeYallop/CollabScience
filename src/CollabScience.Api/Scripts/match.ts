@@ -146,8 +146,15 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
         var yMulti = event.deltaY / 80;
         var rotate = xMulti * yMulti;
 
-        event.target.style.transform =
-            "translate(" + event.deltaX + "px, " + event.deltaY + "px) rotate(" + rotate + "deg)";
+        if (!event.target.classList.contains("description")) {
+            event.target.style.transform =
+                "translate(" + event.deltaX + "px, " + event.deltaY + "px) rotate(" + rotate + "deg)";
+        }
+        else {
+            event.target.parentElement.style.transform =
+                "translate(" + event.deltaX + "px, " + event.deltaY + "px) rotate(" + rotate + "deg)";
+        }
+
     });
 
     hammertime.on("panend", function (event) {
@@ -170,8 +177,16 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
             var yMulti = event.deltaY / 80;
             var rotate = xMulti * yMulti;
 
-            event.target.style.transform =
-                "translate(" + toX + "px, " + (toY + event.deltaY) + "px) rotate(" + rotate + "deg)";
+
+
+            if (!event.target.classList.contains("description")) {
+                event.target.style.transform =
+                    "translate(" + toX + "px, " + (toY + event.deltaY) + "px) rotate(" + rotate + "deg)";
+            }
+            else {
+                event.target.parentElement.style.transform =
+                    "translate(" + toX + "px, " + (toY + event.deltaY) + "px) rotate(" + rotate + "deg)";
+            }
 
             cardRemoved(matchResut.isMatch, getId(card));
         }
