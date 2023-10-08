@@ -57,7 +57,7 @@ public static class MatchingUtilities
     {
         if (pool.Count == 0)
         {
-            return 1;
+            return 0;
         }
 
         var matches = 0;

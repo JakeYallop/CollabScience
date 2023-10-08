@@ -1,7 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace CollabScience.Api.Models;
 
+[DebuggerDisplay($"{{{nameof(DebuggerDisplay)}(),nq}}")]
 public class Project
 {
     public int Id { get; init; }
@@ -13,4 +15,6 @@ public class Project
     public string[] Commitment { get; init; }
     public string[] Expertise { get; init; }
     public string[] Area { get; init; }
+
+    private string DebuggerDisplay() => $"{Name} - {string.Join(',', Area)}";
 }
