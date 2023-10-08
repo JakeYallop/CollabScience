@@ -45,6 +45,14 @@ function initCards() {
     });
 
     tinderContainer.classList.add("loaded");
+
+    const profile = getProfileInformation();
+    const viewMatches = document.getElementById("view-matches");
+    if (profile?.matchedWith.length) {
+        viewMatches?.classList.remove("hidden");
+    } else {
+        viewMatches?.classList.add("hidden");
+    }
 }
 
 async function cardRemoved(isMatch: boolean, projectId: number) {
