@@ -18,8 +18,9 @@ matchApi
         {
             alreadyViewed: profile?.viewed,
             areasOfInterest: profile?.areasOfInterest,
-            equipment: profile?.equipment,
             expertise: profile?.expertise,
+            equipment: profile?.equipment,
+            alreadyMatched: profile?.matchedWith,
         },
         10
     )
@@ -31,6 +32,8 @@ matchApi
             addCard(project.id, project.name, project.description, project.imageUrl);
         });
     });
+
+let pendingProjectIds: number[] = [];
 
 function initCards() {
     const newCards = document.querySelectorAll(".tinder--card:not(.removed)") as NodeListOf<HTMLDivElement>;
@@ -46,6 +49,7 @@ function initCards() {
 
 async function cardRemoved(isMatch: boolean, projectId: number) {
     initCards();
+    pendingProjectIds = pendingProjectIds.filter(x => x !== projectId);
     const profile = getProfileInformation();
     if (profile) {
         addViewed(projectId);
@@ -59,6 +63,8 @@ async function cardRemoved(isMatch: boolean, projectId: number) {
         areasOfInterest: profile?.areasOfInterest,
         expertise: profile?.expertise,
         equipment: profile?.equipment,
+        pendingMatches: pendingProjectIds,
+        alreadyMatched: profile?.matchedWith,
     });
     setTimeout(async () => {
         const removedCards = document.querySelectorAll(".tinder--card.removed") as NodeListOf<HTMLDivElement>;
@@ -115,6 +121,7 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
     const card = div.firstElementChild as HTMLDivElement;
     setId(card, id);
     cardContainer.appendChild(card);
+    pendingProjectIds.push(id);
 
     const matchResut = {
         isMatch: false,

@@ -4,7 +4,9 @@ export interface MatchParameters {
     areasOfInterest?: string[];
     equipment?: string[];
     expertise?: string[];
+    pendingMatches?: number[];
     alreadyViewed?: number[];
+    alreadyMatched?: number[];
 }
 
 export interface Project {

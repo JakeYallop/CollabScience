@@ -34,11 +34,11 @@ public sealed class ParametersMatchingService : MatchingService
 
     private static double ComputeWeightForProject(Project project, MatchParameters parameters)
     {
-        var areasOfInterest = ArrayUtilties.ProportionMatchingInSelections(project.Area.ToHashSet(), parameters.AreasOfInterest) * AreasOfInterestWeight;
-        var expertise = ArrayUtilties.ProportionMatchingInSelections(project.Expertise.ToHashSet(), parameters.Expertise) * ExpertiseWeight;
+        var areasOfInterest = MatchingUtilities.ProportionMatchingInSelections(project.Area.ToHashSet(), parameters.AreasOfInterest) * AreasOfInterestWeight;
+        var expertise = MatchingUtilities.ProportionMatchingInSelections(project.Expertise.ToHashSet(), parameters.Expertise) * ExpertiseWeight;
         var result = areasOfInterest + expertise;
 
-        if (parameters.AlreadyViewed.Contains(project.Id))
+        if (parameters.AlreadyViewed.Contains(project.Id) || parameters.PendingMatches.Contains(project.Id))
         {
             result = double.MinValue;
         }
@@ -46,7 +46,7 @@ public sealed class ParametersMatchingService : MatchingService
     }
 }
 
-public static class ArrayUtilties
+public static class MatchingUtilities
 {
     public static double ProportionMatchingInSelections<T>(ISet<T> pool, ICollection<T> selections) where T : notnull, IEquatable<T>
     {
@@ -83,7 +83,22 @@ public static class RandomSampleMatcher
         }
         else
         {
-            var unseenProjects = projects.Where(x => !parameters.AlreadyViewed.Contains(x.Id)).ToArray();
+            var unseenProjects = projects.Where(x => !parameters.AlreadyViewed.Contains(x.Id) && !parameters.PendingMatches.Contains(x.Id)).ToArray();
+            if (unseenProjects.Length == 0)
+            {
+                unseenProjects = projects.Where(x => !parameters.AlreadyMatched.Contains(x.Id) && !parameters.PendingMatches.Contains(x.Id)).ToArray();
+            }
+
+            if (unseenProjects.Length == 0)
+            {
+                unseenProjects = projects.Where(x => !parameters.PendingMatches.Contains(x.Id)).ToArray();
+            }
+
+            if (unseenProjects.Length == 0)
+            {
+                unseenProjects = projects;
+            }
+
             return unseenProjects.OrderBy(x => Random.Shared.Next(0, unseenProjects.Length)).Take(count);
         }
     }
