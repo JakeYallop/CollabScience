@@ -65,7 +65,8 @@
   }
   
   .tinder--card {
-    display: inline-block;
+    display: flex;
+    flex-direction:column;
     width: 90vw;
     max-width: 400px;
     background: #FFFFFF;
@@ -90,6 +91,7 @@
   
   .tinder--card img {
     max-width: 100%;
+    flex-shrink:1;
     pointer-events: none;
   }
   
@@ -100,12 +102,9 @@
     pointer-events: none;
     color: black;
   }
-  
-  .tinder--card p {
-    margin-top: 24px;
-    font-size: 20px;
-    padding: 0 16px;
-    pointer-events: none;
+
+  .tinder--card div {
+    flex-grow:1;
   }
   
   .tinder--buttons {
@@ -139,13 +138,13 @@
   .description {
     color: black;
   }
-  
-  .fa-heart {
-    color: #FFACE4;
-  }
+
+    .fa-heart {
+        color: #d41c4a;
+    }
   
   .fa-remove {
-    color: #CDD6DD;
+    color: #222;
   }
 
   
