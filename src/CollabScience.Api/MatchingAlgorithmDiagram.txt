@@ -6,7 +6,7 @@ flowchart LR
     T --> C[From all projects]
     subgraph Random Matcher
 
-        C --> Final[Pick random projects]
+        C --> Final[Pick random N projects]
     end
         Final --> L
     B --> |No|S[Weighted Matcher]
@@ -20,8 +20,8 @@ flowchart LR
     G --> I[Areas + Expertise final value]
     H --> I
     end
-    I --> J[Sort by weighting]
-    J --> K[Take first N results]
+    I --> J[Sort projects by final value, largest first]
+    J --> K[Take first N projects]
     end
     K --> L[Output projects]
 
