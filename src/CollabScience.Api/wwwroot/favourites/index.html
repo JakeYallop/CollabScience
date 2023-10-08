@@ -5,38 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Profile</title>
+    <title>User Profile</title>
 </head>
 
 <body>
     <div class="profile">
         <div class="personal-info">
-          <div class="profile">
             <div class="profile-picture">
                 <img src="user-picture.jpg" alt="User's profile picture" id="profile-image">
+                <!-- Added an input for image upload -->
                 <input type="file" id="image-upload" style="display:none;">
                 <button id="edit-image-btn">Edit Image</button>
             </div>
-            <div class="personal-info">
-                <h2>Profile Information</h2>
-                <p><strong>Name:</strong> <span id="name">John Doe</span> <button id="edit-name-btn">Edit</button></p>
-                <p><strong>Email:</strong> <span id="email">john@example.com</span> <button id="edit-email-btn">Edit</button></p>
-                <p><strong>Time Zone:</strong> <span id="time-zone">EST</span> <button id="edit-timezone-btn">Edit</button></p>
-                <p><strong>Location:</strong> <span id="location">United States</span> <button id="edit-location-btn">Edit</button></p>
-            </div>
+            <h2>Profile Information</h2>
+            <p><strong>Name:</strong> <span id="name"></span> <button id="edit-name-btn">Edit</button></p>
+            <p><strong>Email:</strong> <span id="email"></span> <button id="edit-email-btn">Edit</button></p>
+            <p><strong>Time Zone:</strong> <span id="time-zone"></span> <button id="edit-timezone-btn">Edit</button></p>
+            <p><strong>Location:</strong> <span id="location"></span> <button id="edit-location-btn">Edit</button></p>
         </div>
-        </div>
-
         <div class="preferences">
-          <h2>Preferences</h2>
-          <p><strong>Equipment:</strong> <span id="equipment">Telescope, Microscope</span> <button id="edit-equipment-btn">Edit</button></p>
-          <p><strong>Expertise:</strong> <span id="expertise">Machine Learning, Data Science</span> <button id="edit-expertise-btn">Edit</button></p>
-          <p><strong>Interest:</strong> <span id="interest">Dark Matter, Gravitational Waves</span> <button id="edit-interest-btn">Edit</button></p>
-      </div>
-  </div>
-
+            <h2>Preferences</h2>
+            <p><strong>Equipment:</strong> <span id="equipment"></span> <button id="edit-equipment-btn">Edit</button></p>
+            <p><strong>Expertise:</strong> <span id="expertise"></span> <button id="edit-expertise-btn">Edit</button></p>
+            <p><strong>Interest:</strong> <span id="interest"></span> <button id="edit-interest-btn">Edit</button></p>
+        </div>
     </div>
-    <script src="profile.js"></script>
+    <script src="pr.js"></script>
 </body>
 
 </html>
