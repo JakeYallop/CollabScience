@@ -20,8 +20,8 @@ flowchart LR
     G --> I[Areas + Expertise final value]
     H --> I
     end
-    end
     I --> J[Sort by weighting]
     J --> K[Take first N results]
+    end
     K --> L[Output projects]
 
