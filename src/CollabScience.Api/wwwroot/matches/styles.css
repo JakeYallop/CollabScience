@@ -1,11 +1,3 @@
-.shown {
-    display: block;
-}
-
-#no-profile-message {
-    display: none;
-}
-
 .container {
     position: relative;
     height: 100%;
