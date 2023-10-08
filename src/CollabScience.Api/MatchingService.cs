@@ -34,7 +34,9 @@ public sealed class ParametersMatchingService : MatchingService
             return Array.Empty<Project>();
         }
 
-        return projects.OrderByDescending(x => ComputeWeightForProject(x, parameters)).Take(numberOfMatches);
+        var unseenProjects = projects.Where(x => !parameters.AlreadyViewed.Contains(x.Id) && !parameters.PendingMatches.Contains(x.Id));
+
+        return unseenProjects.OrderByDescending(x => ComputeWeightForProject(x, parameters)).Take(numberOfMatches);
     }
 
     private static double ComputeWeightForProject(Project project, MatchParameters parameters)
@@ -42,11 +44,6 @@ public sealed class ParametersMatchingService : MatchingService
         var areasOfInterest = MatchingUtilities.ProportionMatchingInSelections(project.Area.ToHashSet(), parameters.AreasOfInterest) * AreasOfInterestWeight;
         var expertise = MatchingUtilities.ProportionMatchingInSelections(project.Expertise.ToHashSet(), parameters.Expertise) * ExpertiseWeight;
         var result = areasOfInterest + expertise;
-
-        if (parameters.AlreadyViewed.Contains(project.Id) || parameters.PendingMatches.Contains(project.Id))
-        {
-            result = double.MinValue;
-        }
         return result;
     }
 }
