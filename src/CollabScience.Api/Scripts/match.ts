@@ -41,7 +41,7 @@ function initCards() {
     newCards.forEach(function (card, index) {
         card.style.zIndex = "" + (allCards.length - index);
         card.style.transform = "scale(" + (20 - index) / 20 + ") translateY(-" + 30 * index + "px)";
-        card.style.opacity = "" + (10 - index) / 10;
+        card.style.filter = "blur(" + (0.5 - ((10 - index) / 20)) + "em)";
     });
 
     tinderContainer.classList.add("loaded");
@@ -226,3 +226,7 @@ const loveListener = createButtonListener(true);
 
 nope.addEventListener("click", nopeListener);
 love.addEventListener("click", loveListener);
+
+document.querySelector('#matches')!.addEventListener("click", () => {
+    window.location.assign("/matches/");
+});

@@ -147,11 +147,18 @@
     color: #222;
   }
 
-  
-  .project-image {
-    width: 150px;  
-    height:auto;
-  }
+#matches {
+    width: fit-content;
+    border-radius: 8px;
+    color: black;
+    padding: 0.1em 1em;
+}
+
+
+.project-image {
+    width: 150px;
+    height: auto;
+}
 
   .scrollable-content {
     max-height: 150px;  
