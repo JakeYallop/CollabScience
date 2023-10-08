@@ -3,15 +3,12 @@ flowchart LR
     A --> |Yes|B{Viewed all projects?}
     A --> |No|T[Go to Random matcher]
     B --> |Yes|T
-    T -->M{Has unviewed projects?}
+    T --> C[From all projects]
     subgraph Random Matcher
-        M --> |Yes|Final[Get random project from selection]
-        M --> |No|Q{Has unmatched projects?}
-        Q --> |Yes|Final
-        Q --> |No|R[No more projects left to view]
+
+        C --> Final[Pick random projects]
     end
-    Final --> L
-    R --> L
+        Final --> L
     B --> |No|S[Weighted Matcher]
     S --> D[Compute Weighting]
     subgraph Weighted Matcher
@@ -23,8 +20,8 @@ flowchart LR
     G --> I[Areas + Expertise final value]
     H --> I
     end
-    end
     I --> J[Sort by weighting]
     J --> K[Take first N results]
+    end
     K --> L[Output projects]
 

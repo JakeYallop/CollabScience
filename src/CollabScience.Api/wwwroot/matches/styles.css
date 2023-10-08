@@ -2,10 +2,16 @@ body{
     display: block;
 }
 
+.table-container {
+    margin-top: 20px;
+    width: 100%; 
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    header: 1px solid #ddd;
+
 }
 
 th, td {
@@ -19,7 +25,18 @@ th {
     color: white;
 }
 
+tr {
+    cursor:pointer;
+}
+
 tr:hover {
     background-color: #aadfa3;
 }
 
+
+.footer-link {
+    position: fixed;
+    left: 0.5em;
+    bottom: 0.5em;
+    color: white;
+}

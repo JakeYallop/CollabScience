@@ -24,9 +24,14 @@ public sealed class ParametersMatchingService : MatchingService
     public override async Task<IEnumerable<Project>> ComputeMatchAsync(MatchParameters parameters, int numberOfMatches = 1)
     {
         var projects = await _projectsRepository.GetProjectsAsync().ConfigureAwait(false);
-        if (parameters.AlreadyViewed.Count == projects.Length || parameters.IsEmptyProfile)
+        if (parameters.IsEmptyProfile)
         {
-            return RandomSampleMatcher.Match(projects, parameters, numberOfMatches);
+            return RandomSampleMatcher.Match(projects, numberOfMatches);
+        }
+
+        if (parameters.AlreadyViewed.Count == projects.Length)
+        {
+            return Array.Empty<Project>();
         }
 
         return projects.OrderByDescending(x => ComputeWeightForProject(x, parameters)).Take(numberOfMatches);
@@ -75,26 +80,8 @@ public static class MatchingUtilities
 
 public static class RandomSampleMatcher
 {
-    public static IEnumerable<Project> Match(Project[] projects, MatchParameters parameters, int count = 1)
+    public static IEnumerable<Project> Match(Project[] projects, int count = 1)
     {
-        if (parameters is null || parameters.AlreadyViewed is null || parameters.AlreadyViewed.Count is 0)
-        {
-            return projects.OrderBy(x => Random.Shared.Next(0, projects.Length)).Take(count);
-        }
-        else
-        {
-            var unseenProjects = projects.Where(x => !parameters.AlreadyViewed.Contains(x.Id) && !parameters.PendingMatches.Contains(x.Id)).ToArray();
-            if (unseenProjects.Length == 0)
-            {
-                unseenProjects = projects.Where(x => !parameters.AlreadyMatched.Contains(x.Id) && !parameters.PendingMatches.Contains(x.Id)).ToArray();
-            }
-
-            if (unseenProjects.Length == 0)
-            {
-                return Array.Empty<Project>();
-            }
-
-            return unseenProjects.OrderBy(x => Random.Shared.Next(0, unseenProjects.Length)).Take(count);
-        }
+        return projects.OrderBy(x => Random.Shared.Next(0, projects.Length)).Take(count);
     }
 }
