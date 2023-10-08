@@ -171,10 +171,26 @@ function addCard(id: number, title: string, description: string, imageUrl?: stri
 
         if (!event.target.classList.contains("description")) {
             event.target.style.transform =
-                "translate(" + event.deltaX + "px, " + event.deltaY + "px) rotate(" + rotate + "deg)";
+                "translate(" +
+                event.deltaX +
+                "px, " +
+                event.deltaY +
+                "px) rotate(" +
+                rotate +
+                "deg) rotateY(" +
+                rotate +
+                "deg)";
         } else {
             event.target.parentElement.style.transform =
-                "translate(" + event.deltaX + "px, " + event.deltaY + "px) rotate(" + rotate + "deg)";
+                "translate(" +
+                event.deltaX +
+                "px, " +
+                event.deltaY +
+                "px) rotate(" +
+                rotate +
+                "deg) rotateY(" +
+                rotate +
+                "deg)";
         }
     });
 
