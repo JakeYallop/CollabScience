@@ -5,3 +5,8 @@
 #no-profile-message {
     display: none;
 }
+
+.container {
+    position: relative;
+    padding-bottom: 3em;
+}
