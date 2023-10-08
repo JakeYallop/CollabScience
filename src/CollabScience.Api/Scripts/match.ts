@@ -6,6 +6,7 @@ const cardContainer = document.querySelector(".tinder--cards")!;
 const allCards = document.querySelectorAll(".tinder--card")!;
 const nope = document.getElementById("nope")!;
 const love = document.getElementById("love")!;
+let pendingProjectIds: number[] = [];
 
 const profile = getProfileInformation();
 if (!profile) {
@@ -32,8 +33,7 @@ matchApi
             addCard(project.id, project.name, project.description, project.imageUrl);
         });
     });
-
-let pendingProjectIds: number[] = [];
+checkForNoMoreCards();
 
 function initCards() {
     const newCards = document.querySelectorAll(".tinder--card:not(.removed)") as NodeListOf<HTMLDivElement>;
@@ -41,17 +41,18 @@ function initCards() {
     newCards.forEach(function (card, index) {
         card.style.zIndex = "" + (allCards.length - index);
         card.style.transform = "scale(" + (20 - index) / 20 + ") translateY(-" + 30 * index + "px)";
-        card.style.filter = "blur(" + (0.5 - ((10 - index) / 20)) + "em)";
+        card.style.filter = "blur(" + (0.5 - (10 - index) / 20) + "em)";
     });
 
     tinderContainer.classList.add("loaded");
+    checkForNoMoreCards();
+}
 
-    const profile = getProfileInformation();
-    const viewMatches = document.getElementById("view-matches");
-    if (profile?.matchedWith.length) {
-        viewMatches?.classList.remove("hidden");
+function checkForNoMoreCards() {
+    if (pendingProjectIds.length === 0) {
+        document.getElementById("no-projects-left")?.classList.remove("hidden");
     } else {
-        viewMatches?.classList.add("hidden");
+        document.getElementById("no-projects-left")?.classList.add("hidden");
     }
 }
 
@@ -77,11 +78,14 @@ async function cardRemoved(isMatch: boolean, projectId: number) {
     setTimeout(async () => {
         const removedCards = document.querySelectorAll(".tinder--card.removed") as NodeListOf<HTMLDivElement>;
         removedCards.forEach(card => card.remove());
+        checkForNoMoreCards();
     }, 2000);
     const response = await promise;
     const data = await response.json();
-    const info = data[0];
-    addCard(info.id, info.name, info.description, info.imageUrl);
+    if (data.length > 0) {
+        const info = data[0];
+        addCard(info.id, info.name, info.description, info.imageUrl);
+    }
 }
 
 function createButtonListener(love) {
@@ -106,6 +110,7 @@ function createButtonListener(love) {
         event.preventDefault();
 
         cardRemoved(love, getId(card));
+        checkForNoMoreCards();
     };
 }
 
@@ -228,6 +233,6 @@ const loveListener = createButtonListener(true);
 nope.addEventListener("click", nopeListener);
 love.addEventListener("click", loveListener);
 
-document.querySelector('#matches')!.addEventListener("click", () => {
+document.querySelector("#matches")!.addEventListener("click", () => {
     window.location.assign("/matches/");
 });

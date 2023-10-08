@@ -91,12 +91,7 @@ public static class RandomSampleMatcher
 
             if (unseenProjects.Length == 0)
             {
-                unseenProjects = projects.Where(x => !parameters.PendingMatches.Contains(x.Id)).ToArray();
-            }
-
-            if (unseenProjects.Length == 0)
-            {
-                unseenProjects = projects;
+                return Array.Empty<Project>();
             }
 
             return unseenProjects.OrderBy(x => Random.Shared.Next(0, unseenProjects.Length)).Take(count);
