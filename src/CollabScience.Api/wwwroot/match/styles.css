@@ -5,9 +5,7 @@
   }
   
   body {
-    background: #084C61;
     overflow: hidden;
-    font-family: sans-serif;
   }
   
   .tinder {
@@ -100,6 +98,7 @@
     font-size: 32px;
     padding: 0 16px;
     pointer-events: none;
+    color: black;
   }
   
   .tinder--card p {
@@ -116,9 +115,7 @@
      position: relative;  
      z-index: 3; 
   }
-  
-  
-  
+
   .tinder--buttons button {
     border-radius: 50%;
     line-height: 60px;
@@ -127,6 +124,7 @@
     background: #FFFFFF;
     display: inline-block;
     margin: 0 8px;
+    padding: 0;
   }
   
   .tinder--buttons button:focus {
@@ -136,6 +134,10 @@
   .tinder--buttons i {
     font-size: 32px;
     vertical-align: middle;
+  }
+
+  .description {
+    color: black;
   }
   
   .fa-heart {
