@@ -26,7 +26,7 @@ Navigate through the CollabScience codebase and get it running in a few simple s
 - **Azure with GitHub Actions CI**: Employing cloud technology and continuous integration for seamless deployment and management.
 
 ## Deployment: Your Gateway to Collaboration
-Engage with CollabScience and initiate your innovative journey directly via: ~[CollabScience.Earth](https://collabscience.earth/)~ The original CollabScience domain is no longer active - (view the static website version instead)[https://collabscience.earth/].
+Engage with CollabScience and initiate your innovative journey directly via: ~[CollabScience.Earth](https://collabscience.earth/)~ The original CollabScience domain is no longer active - [view the static website version instead](https://collabscience.earth/).
 
 ## Potential Extensions: Expanding Horizons
 1. **Submission Dynamics**: Integrate a user-friendly submission page and process, enabling a smooth introduction of new projects to the platform.
